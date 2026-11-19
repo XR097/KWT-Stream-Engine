@@ -30,14 +30,16 @@ def esc_tt(s):
     out = esc(s)
     return re.sub(r'(\\_|/|\.|-)', r'\1\\allowbreak{}', out)
 
-TOKEN = re.compile(r'(\*\*.+?\*\*|`[^`]+`|【[^】]*】)')
+TOKEN = re.compile(r'(\*\*.+?\*\*|`[^`]+`|【[^】]*】|\$[^$]+\$)')
 def inline(text):
     out = []
     for part in TOKEN.split(text):
         if not part: continue
         if part.startswith('**') and part.endswith('**'): out.append(r'\textbf{%s}' % inline(part[2:-2]))
         elif part.startswith('`'): out.append(r'\texttt{%s}' % esc_tt(part[1:-1]))
+        elif len(part) > 2 and part[0] == '$' and part[-1] == '$': out.append(part)
         elif part.startswith('【'): out.append(r'\todo{%s}' % esc(part))
+        elif part.startswith('$') and part.endswith('$') and len(part) > 2: out.append(part)
         else: out.append(esc(part))
     return ''.join(out)
 
@@ -110,6 +112,11 @@ def convert(md):
     while i < len(lines):
         ln = lines[i].rstrip()
         if not ln.strip(): i += 1; continue
+        # 行间公式：单独一行 $$ LaTeX $$ (2-1)
+        m = re.match(r'^\$\$(.+?)\$\$\s*(?:[（(]([\w.-]+)[）)])?\s*$', ln.strip())
+        if m:
+            tag = r'\tag{%s}' % m.group(2) if m.group(2) else ''
+            out.append(r'\begin{equation*}%s %s\end{equation*}' % (m.group(1).strip(), tag)); i += 1; continue
         m = re.match(r'^(#{1,3})\s+(.*)', ln)
         if m:
             lv, t = len(m.group(1)), m.group(2).strip()
@@ -202,7 +209,7 @@ PRE = r'''\documentclass[lang=cn,a4paper,11pt,chinesefont=nofont]{elegantpaper}
 def main():
     files = sorted(glob.glob(os.path.join(HERE, 'draft', 'ch*.md')), key=lambda f: int(re.search(r'ch(\d+)', f).group(1)))
     md = '\n\n'.join(open(f, encoding='utf-8').read() for f in files)
-    a = md.index('# 1 设计概述')
+    a = md.index('# 1 引言')
     T = esc(TITLE)
     logo = os.path.relpath(os.path.join(HERE, 'figures', 'cover_logo.png'), os.path.join(HERE, 'build'))
     tex = PRE % dict(F=FONT, T=T, TC1=T.split('：', 1)[0], TC2=T.split('：', 1)[-1], D=DATE, LOGO=logo, ABS=convert(md[:a]))
