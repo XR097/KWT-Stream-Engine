@@ -1,0 +1,48 @@
+% 图 4-2 KSE 单任务时序示意（横向未按比例）
+\documentclass[border=4pt]{standalone}
+\input{common.tex}
+\begin{document}
+\begin{tikzpicture}[x=1cm, y=1cm,
+  bar/.style={draw=white, line width=0.8pt, minimum height=5.5mm, anchor=west, inner sep=0, font=\scriptsize},
+  lane/.style={anchor=east, font=\footnotesize, align=right},
+  ev/.style={->, draw=cInk, line width=0.5pt},
+]
+\def\W{11.6}
+\node[lane] at (-0.2,4.35) {加载器写入\\\scriptsize 输入 + 12 层参数};
+\node[lane] at (-0.2,3.0) {引擎 DMA 读};
+\node[lane] at (-0.2,2.0) {E203};
+\node[lane] at (-0.2,1.0) {引擎计算};
+\node[lane] at (-0.2,0.0) {DMA 写输出};
+% 加载器：80,592 字 + 门铃，与 DMA 交替占用端口
+\node[bar, fill=cGray, text=white, minimum width=10.8cm] at (0,4.35) {80,592 字 + 81 笔进度门铃，与 DMA 读交替占用同一 32 位端口};
+% DMA 读：首批门铃后开始，只读已提交的字
+\node[bar, fill=cBlueM, minimum width=10.0cm] at (0.9,3.0) {输入与参数段顺序读（A + 4 $\le$ WPTR）};
+\draw[decorate, decoration={brace, amplitude=3pt}, draw=cGray] (0,3.4) -- (0.9,3.4) node[midway, above=1pt, lbl] {首批};
+% E203
+\node[bar, fill=cGray!60, minimum width=0.95cm] at (0.05,2.0) {};
+\node[font=\scriptsize, anchor=north west] at (0.0,1.72) {启动，命令 0、1};
+\node[font=\scriptsize, text=cGray] at (5.6,2.42) {WFI 等待；每次层完成中断后下发第 L+2 层命令};
+% 引擎逐层（每层 0.8 cm，第 0 层略长）
+\foreach \i in {0,...,11} {
+  \pgfmathsetmacro{\xs}{ifthenelse(\i==0,1.1,1.25+\i*0.8)}
+  \pgfmathsetmacro{\w}{ifthenelse(\i==0,0.95,0.8)}
+  \node[bar, fill=cBlue, text=white, minimum width=\w cm] at (\xs,1.0) {L\i};
+  \draw[->, draw=cOrange, line width=0.5pt] (\xs+\w,0.72) -- (\xs+\w,1.72);
+  \node[bar, fill=cGray!60, minimum width=0.14cm] at (\xs+\w,2.0) {};
+}
+\node[font=\scriptsize, text=cOrange!80!black, anchor=west] at (11.4,1.3) {层完成中断};
+% 输出写回
+\node[bar, fill=cOrange, text=white, minimum width=0.75cm] at (10.15,0.0) {输出};
+\node[font=\scriptsize, text=cGray, anchor=west] at (11.4,0.0) {1,584 字，跟随末层 LN2 写出};
+% 完成标志
+\node[bar, fill=cPurple, minimum width=0.2cm] at (11.0,2.0) {};
+\node[font=\scriptsize, anchor=west] at (11.45,2.0) {检查后写完成标志 0x600D000C};
+% 计时窗口
+\draw[draw=cPurple, line width=0.8pt, dashed] (0,-0.6) -- (0,4.95);
+\draw[draw=cPurple, line width=0.8pt, dashed] (11.2,-0.6) -- (11.2,4.95);
+\draw[<->, draw=cPurple, line width=0.8pt] (0,-0.75) -- node[below, font=\footnotesize, text=cPurple] {计时窗口：163,328 拍} (11.2,-0.75);
+\node[font=\scriptsize, text=cPurple, align=center, anchor=south] at (0,4.95) {起点：加载器第一笔\\写（BASE 门铃）握手};
+\node[font=\scriptsize, text=cPurple, align=center, anchor=south] at (11.2,4.95) {终点：完成标志在\\共享 SRAM 从口握手};
+\node[font=\scriptsize, text=cGray, anchor=north west] at (-2.4,-1.15) {示意图：横向未按比例。第 0 层含输入读取，约 1.7 万拍；其余各层约 1.3 万拍。};
+\end{tikzpicture}
+\end{document}

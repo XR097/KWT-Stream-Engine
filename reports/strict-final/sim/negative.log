@@ -1,0 +1,225 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Notice: timing checks disabled with +notimingcheck at compile-time
+Chronologic VCS simulator copyright 1991-2025
+Contains Synopsys proprietary information.
+Compiler version X-2025.06-SP1_Full64; Runtime version X-2025.06-SP1_Full64;  Nov 13 14:07 2026
+[LOADER] image loaded from ../data/tasks/task_00_img.hex
+ERROR early doorbell exceeds actual data writes
+ERROR DMA read 0x000ac violates the release rule (wptr 0x4eb40 done 0)
+ERROR DMA read 0x000b0 violates the release rule (wptr 0x4eb40 done 0)
+ERROR DMA read 0x000ac returned 00000000, loader wrote fd0023d9
+ERROR DMA read 0x000b4 violates the release rule (wptr 0x4eb40 done 0)
+ERROR DMA read 0x000b0 returned 00000000, loader wrote e6e2eb4a
+ERROR DMA read 0x000b8 violates the release rule (wptr 0x4eb40 done 0)
+ERROR DMA read 0x000b4 returned 00000000, loader wrote fa07f9eb
+ERROR DMA read 0x000b8 returned 00000000, loader wrote 12e89808
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+ERROR early doorbell exceeds actual data writes
+MISMATCH task 0 output byte 0 got 00 exp 0f
+MISMATCH task 0 output byte 1 got 00 exp f9
+MISMATCH task 0 output byte 2 got 00 exp 01
+MISMATCH task 0 output byte 3 got 00 exp 03
+MISMATCH task 0 output byte 4 got 00 exp 11
+MISMATCH task 0 output byte 5 got 00 exp 23
+MISMATCH task 0 output byte 6 got 00 exp f7
+MISMATCH task 0 output byte 7 got 00 exp ef
+DOORBELLS task=0 count=39
+ERROR doorbell count
+ERROR loader wrote 37889 words, expected 80592
+ERROR loader not done
+CROSS_LAYER task=0 early_commands=11
+CROSS_MAC task=0 layer=1 steps=9
+CROSS_MAC task=0 layer=2 steps=9
+CROSS_MAC task=0 layer=3 steps=9
+CROSS_MAC task=0 layer=4 steps=9
+CROSS_MAC task=0 layer=5 steps=9
+CROSS_MAC task=0 layer=6 steps=9
+CROSS_MAC task=0 layer=7 steps=9
+CROSS_MAC task=0 layer=8 steps=9
+CROSS_MAC task=0 layer=9 steps=9
+CROSS_MAC task=0 layer=10 steps=9
+CROSS_MAC task=0 layer=11 steps=9
+LAYER_PHASE task=0 layer=0 phase=1 cycles=1589
+LAYER_PHASE task=0 layer=0 phase=2 cycles=1803
+LAYER_PHASE task=0 layer=0 phase=3 cycles=1131
+LAYER_PHASE task=0 layer=0 phase=4 cycles=958
+LAYER_PHASE task=0 layer=0 phase=5 cycles=508
+LAYER_PHASE task=0 layer=0 phase=6 cycles=651
+LAYER_PHASE task=0 layer=0 phase=7 cycles=473
+LAYER_PHASE task=0 layer=0 phase=8 cycles=1535
+LAYER_PHASE task=0 layer=0 phase=9 cycles=3063
+LAYER_PHASE task=0 layer=0 phase=10 cycles=1
+LAYER_PHASE task=0 layer=1 phase=2 cycles=1403
+LAYER_PHASE task=0 layer=1 phase=3 cycles=1131
+LAYER_PHASE task=0 layer=1 phase=4 cycles=958
+LAYER_PHASE task=0 layer=1 phase=5 cycles=508
+LAYER_PHASE task=0 layer=1 phase=6 cycles=651
+LAYER_PHASE task=0 layer=1 phase=7 cycles=473
+LAYER_PHASE task=0 layer=1 phase=8 cycles=1535
+LAYER_PHASE task=0 layer=1 phase=9 cycles=3063
+LAYER_PHASE task=0 layer=1 phase=10 cycles=1
+LAYER_PHASE task=0 layer=2 phase=2 cycles=1403
+LAYER_PHASE task=0 layer=2 phase=3 cycles=1131
+LAYER_PHASE task=0 layer=2 phase=4 cycles=958
+LAYER_PHASE task=0 layer=2 phase=5 cycles=508
+LAYER_PHASE task=0 layer=2 phase=6 cycles=651
+LAYER_PHASE task=0 layer=2 phase=7 cycles=473
+LAYER_PHASE task=0 layer=2 phase=8 cycles=1535
+LAYER_PHASE task=0 layer=2 phase=9 cycles=3063
+LAYER_PHASE task=0 layer=2 phase=10 cycles=1
+LAYER_PHASE task=0 layer=3 phase=2 cycles=1403
+LAYER_PHASE task=0 layer=3 phase=3 cycles=1131
+LAYER_PHASE task=0 layer=3 phase=4 cycles=958
+LAYER_PHASE task=0 layer=3 phase=5 cycles=508
+LAYER_PHASE task=0 layer=3 phase=6 cycles=651
+LAYER_PHASE task=0 layer=3 phase=7 cycles=473
+LAYER_PHASE task=0 layer=3 phase=8 cycles=1535
+LAYER_PHASE task=0 layer=3 phase=9 cycles=3063
+LAYER_PHASE task=0 layer=3 phase=10 cycles=1
+LAYER_PHASE task=0 layer=4 phase=2 cycles=1403
+LAYER_PHASE task=0 layer=4 phase=3 cycles=1131
+LAYER_PHASE task=0 layer=4 phase=4 cycles=958
+LAYER_PHASE task=0 layer=4 phase=5 cycles=508
+LAYER_PHASE task=0 layer=4 phase=6 cycles=651
+LAYER_PHASE task=0 layer=4 phase=7 cycles=473
+LAYER_PHASE task=0 layer=4 phase=8 cycles=1535
+LAYER_PHASE task=0 layer=4 phase=9 cycles=3063
+LAYER_PHASE task=0 layer=4 phase=10 cycles=1
+LAYER_PHASE task=0 layer=5 phase=2 cycles=1403
+LAYER_PHASE task=0 layer=5 phase=3 cycles=1131
+LAYER_PHASE task=0 layer=5 phase=4 cycles=958
+LAYER_PHASE task=0 layer=5 phase=5 cycles=508
+LAYER_PHASE task=0 layer=5 phase=6 cycles=651
+LAYER_PHASE task=0 layer=5 phase=7 cycles=473
+LAYER_PHASE task=0 layer=5 phase=8 cycles=1535
+LAYER_PHASE task=0 layer=5 phase=9 cycles=3063
+LAYER_PHASE task=0 layer=5 phase=10 cycles=1
+LAYER_PHASE task=0 layer=6 phase=2 cycles=1403
+LAYER_PHASE task=0 layer=6 phase=3 cycles=1131
+LAYER_PHASE task=0 layer=6 phase=4 cycles=958
+LAYER_PHASE task=0 layer=6 phase=5 cycles=508
+LAYER_PHASE task=0 layer=6 phase=6 cycles=651
+LAYER_PHASE task=0 layer=6 phase=7 cycles=473
+LAYER_PHASE task=0 layer=6 phase=8 cycles=1535
+LAYER_PHASE task=0 layer=6 phase=9 cycles=3063
+LAYER_PHASE task=0 layer=6 phase=10 cycles=1
+LAYER_PHASE task=0 layer=7 phase=2 cycles=1403
+LAYER_PHASE task=0 layer=7 phase=3 cycles=1131
+LAYER_PHASE task=0 layer=7 phase=4 cycles=958
+LAYER_PHASE task=0 layer=7 phase=5 cycles=508
+LAYER_PHASE task=0 layer=7 phase=6 cycles=651
+LAYER_PHASE task=0 layer=7 phase=7 cycles=473
+LAYER_PHASE task=0 layer=7 phase=8 cycles=1535
+LAYER_PHASE task=0 layer=7 phase=9 cycles=3063
+LAYER_PHASE task=0 layer=7 phase=10 cycles=1
+LAYER_PHASE task=0 layer=8 phase=2 cycles=1403
+LAYER_PHASE task=0 layer=8 phase=3 cycles=1131
+LAYER_PHASE task=0 layer=8 phase=4 cycles=958
+LAYER_PHASE task=0 layer=8 phase=5 cycles=508
+LAYER_PHASE task=0 layer=8 phase=6 cycles=651
+LAYER_PHASE task=0 layer=8 phase=7 cycles=473
+LAYER_PHASE task=0 layer=8 phase=8 cycles=1535
+LAYER_PHASE task=0 layer=8 phase=9 cycles=3063
+LAYER_PHASE task=0 layer=8 phase=10 cycles=1
+LAYER_PHASE task=0 layer=9 phase=2 cycles=1403
+LAYER_PHASE task=0 layer=9 phase=3 cycles=1131
+LAYER_PHASE task=0 layer=9 phase=4 cycles=958
+LAYER_PHASE task=0 layer=9 phase=5 cycles=508
+LAYER_PHASE task=0 layer=9 phase=6 cycles=651
+LAYER_PHASE task=0 layer=9 phase=7 cycles=473
+LAYER_PHASE task=0 layer=9 phase=8 cycles=1535
+LAYER_PHASE task=0 layer=9 phase=9 cycles=3063
+LAYER_PHASE task=0 layer=9 phase=10 cycles=1
+LAYER_PHASE task=0 layer=10 phase=2 cycles=1403
+LAYER_PHASE task=0 layer=10 phase=3 cycles=1131
+LAYER_PHASE task=0 layer=10 phase=4 cycles=958
+LAYER_PHASE task=0 layer=10 phase=5 cycles=508
+LAYER_PHASE task=0 layer=10 phase=6 cycles=651
+LAYER_PHASE task=0 layer=10 phase=7 cycles=473
+LAYER_PHASE task=0 layer=10 phase=8 cycles=1535
+LAYER_PHASE task=0 layer=10 phase=9 cycles=3063
+LAYER_PHASE task=0 layer=10 phase=10 cycles=1
+LAYER_PHASE task=0 layer=11 phase=2 cycles=1403
+LAYER_PHASE task=0 layer=11 phase=3 cycles=1131
+LAYER_PHASE task=0 layer=11 phase=4 cycles=958
+LAYER_PHASE task=0 layer=11 phase=5 cycles=508
+LAYER_PHASE task=0 layer=11 phase=6 cycles=651
+LAYER_PHASE task=0 layer=11 phase=7 cycles=473
+LAYER_PHASE task=0 layer=11 phase=8 cycles=1535
+LAYER_PHASE task=0 layer=11 phase=9 cycles=3063
+LAYER_PHASE task=0 layer=11 phase=10 cycles=89
+LAYER_PHASE task=0 layer=11 phase=11 cycles=802
+LAYER_PHASE task=0 layer=11 phase=12 cycles=1
+ERROR rule violations 80549, bad reads 64220, bad writes 0
+TASK 0 sample=0 label=0 window_cycles=120248 compared_bytes=6336 mismatches=6193 errors=4 FAIL
+BREAKDOWN task=0 start_flag_to_first_write=2 first_write_to_cmd0=47 loader_span=120254 loader_words=37889 loader_stall=82174
+BREAKDOWN task=0 engine_cmd0_to_done11=119557 kse_busy=119556 drain_done11_to_evt=1 evt11_to_flag=643 awake_cycles=2720 irqs=12
+BREAKDOWN task=0 dma_reads=80592 dma_writes=1584 dma_bus_stall=0 dma_rule_wait=0 param_starve=3248 act_in_starve=2 cpu_shram_accesses=2 cpu_stall=489
+BUS task=0 sram_port_busy=120103 sram_port_idle=146 window_cycles=120248 utilization=0.9988 master_hs_multi=0 sram_hs_mismatch=0 macro_group_overflow=0
+PHASE task=0 phase=1 layer0_cycles=1589 layer1_cycles=0
+PHASE task=0 phase=2 layer0_cycles=1803 layer1_cycles=1315
+PHASE task=0 phase=3 layer0_cycles=1131 layer1_cycles=1131
+PHASE task=0 phase=4 layer0_cycles=958 layer1_cycles=958
+PHASE task=0 phase=5 layer0_cycles=508 layer1_cycles=508
+PHASE task=0 phase=6 layer0_cycles=651 layer1_cycles=651
+PHASE task=0 phase=7 layer0_cycles=473 layer1_cycles=473
+PHASE task=0 phase=8 layer0_cycles=1535 layer1_cycles=1535
+PHASE task=0 phase=9 layer0_cycles=3063 layer1_cycles=3063
+PHASE task=0 phase=10 layer0_cycles=1 layer1_cycles=1
+LAYER task=0 layer=0 cmd=47 done=11847 cycles=11800 gap_from_prev_done=0
+LAYER task=0 layer=1 cmd=11759 done=21570 cycles=9811 gap_from_prev_done=-88
+LAYER task=0 layer=2 cmd=21482 done=31293 cycles=9811 gap_from_prev_done=-88
+LAYER task=0 layer=3 cmd=31205 done=41016 cycles=9811 gap_from_prev_done=-88
+LAYER task=0 layer=4 cmd=40928 done=50739 cycles=9811 gap_from_prev_done=-88
+LAYER task=0 layer=5 cmd=50651 done=60462 cycles=9811 gap_from_prev_done=-88
+LAYER task=0 layer=6 cmd=60374 done=70185 cycles=9811 gap_from_prev_done=-88
+LAYER task=0 layer=7 cmd=70097 done=79908 cycles=9811 gap_from_prev_done=-88
+LAYER task=0 layer=8 cmd=79820 done=89631 cycles=9811 gap_from_prev_done=-88
+LAYER task=0 layer=9 cmd=89543 done=99354 cycles=9811 gap_from_prev_done=-88
+LAYER task=0 layer=10 cmd=99266 done=109077 cycles=9811 gap_from_prev_done=-88
+LAYER task=0 layer=11 cmd=108989 done=119604 cycles=10615 gap_from_prev_done=-88
+==== KSE SoC regression ====
+SUMMARY tasks=1 pass=0 fail=1
+TEST FAILED
+$finish called from file "<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_kse_soc.sv", line 598.
+$finish at simulation time          83163257950
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 831632579500 fs
+CPU Time:     17.150 seconds;       Data structure size:   4.6Mb
+Fri Nov 13 14:07:25 2026

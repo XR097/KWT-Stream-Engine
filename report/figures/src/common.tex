@@ -1,0 +1,37 @@
+% 所有框图共用的样式（standalone + TikZ，xelatex/tectonic 编译）
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Sans CJK SC}[BoldFont=Noto Sans CJK SC Bold]
+\setCJKsansfont{Noto Sans CJK SC}[BoldFont=Noto Sans CJK SC Bold]
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,fit,calc,backgrounds,shapes.geometric,decorations.pathreplacing,patterns}
+% 统一配色：灰蓝主色，橙色强调，紫色辅助
+\definecolor{cBlue}{HTML}{2E6DA4}
+\definecolor{cBlueL}{HTML}{DCE7F2}
+\definecolor{cBlueM}{HTML}{A9C3DD}
+\definecolor{cOrange}{HTML}{C9732E}
+\definecolor{cOrangeL}{HTML}{F6E3D2}
+\definecolor{cPurple}{HTML}{8A5BB0}
+\definecolor{cPurpleL}{HTML}{ECE3F4}
+\definecolor{cGray}{HTML}{5B6670}
+\definecolor{cGrayL}{HTML}{EEF0F2}
+\definecolor{cInk}{HTML}{25303B}
+\tikzset{
+  >={Stealth[length=2.2mm,width=1.6mm]},
+  every node/.style={font=\small, text=cInk},
+  blk/.style={draw=cBlue, fill=cBlueL, line width=0.6pt, rounded corners=1.5pt, align=center, minimum height=7mm, inner sep=3pt},
+  blkO/.style={blk, draw=cOrange, fill=cOrangeL},
+  blkP/.style={blk, draw=cPurple, fill=cPurpleL},
+  blkG/.style={blk, draw=cGray, fill=cGrayL},
+  blkW/.style={blk, draw=cGray, fill=white},
+  grp/.style={draw=cGray, dashed, line width=0.5pt, rounded corners=3pt, inner sep=6pt},
+  grpS/.style={draw=cBlue, line width=0.8pt, rounded corners=3pt, inner sep=6pt},
+  lbl/.style={font=\footnotesize, text=cGray, inner sep=1pt},
+  ttl/.style={font=\small\bfseries, text=cInk, inner sep=1pt},
+  ar/.style={->, draw=cInk, line width=0.6pt},
+  arB/.style={->, draw=cBlue, line width=0.9pt},
+  arO/.style={->, draw=cOrange, line width=0.9pt},
+  arD/.style={->, draw=cGray, line width=0.6pt, dashed},
+  bus/.style={draw=cGray, line width=2.4pt},
+}

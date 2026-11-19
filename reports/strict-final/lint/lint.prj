@@ -1,0 +1,37 @@
+new_project kse_accel_sys -projectwdir . -force
+read_file -type verilog {<KSE>/rtl/kse/kse_pkg.sv}
+read_file -type verilog {<KSE>/rtl/kse/kse_arith.sv}
+read_file -type verilog {<KSE>/rtl/kse/kse_exp_rom.sv}
+read_file -type verilog {<KSE>/rtl/kse/kse_gelu_rom.sv}
+read_file -type verilog {<KSE>/rtl/kse/kse_ln.sv}
+read_file -type verilog {<KSE>/rtl/kse/kse_loader.sv}
+read_file -type verilog {<KSE>/rtl/kse/kse_mac_array.sv}
+read_file -type verilog {<KSE>/rtl/kse/kse_mm.sv}
+read_file -type verilog {<KSE>/rtl/kse/kse_pass.sv}
+read_file -type verilog {<KSE>/rtl/kse/kse_pfifo.sv}
+read_file -type verilog {<KSE>/rtl/kse/kse_post.sv}
+read_file -type verilog {<KSE>/rtl/kse/kse_rowstore.sv}
+read_file -type verilog {<KSE>/rtl/kse/kse_softmax.sv}
+read_file -type verilog {<KSE>/rtl/kse/kse_top.sv}
+read_file -type verilog {<KSE>/rtl/kse_soc/kse_accel_sys.sv}
+read_file -type verilog {<KSE>/rtl/kse_soc/kse_eng_icb.sv}
+read_file -type verilog {<KSE>/rtl/kse_soc/kse_shared_sram.sv}
+read_file -type verilog {<KSE>/rtl/kse_soc/kse_soc_fifo.sv}
+read_file -type verilog {<KSE>/rtl/kse_soc/kse_sram_ctrl.sv}
+read_file -type verilog {<KSE>/rtl/kse_soc/kse_sys_bus.sv}
+read_file -type verilog {<KSE>/tb/models/RAMSP128X16_beh.sv}
+read_file -type verilog {<KSE>/tb/models/RAMSP1024X16_beh.sv}
+read_file -type verilog {<KSE>/tb/models/RAMSP4096X16_beh.sv}
+read_file -type verilog {<KSE>/third-party/e203/rtl/e203/general/sirv_gnrl_icbs.v}
+read_file -type verilog {<KSE>/third-party/e203/rtl/e203/general/sirv_gnrl_bufs.v}
+read_file -type verilog {<KSE>/third-party/e203/rtl/e203/general/sirv_gnrl_dffs.v}
+set_option incdir {<KSE>/third-party/e203/rtl/e203/core}
+set_option top kse_accel_sys
+set_option enableSV09 yes
+set_option define {KSE_SIM}
+set_option mthresh 70000
+current_methodology $SPYGLASS_HOME/GuideWare/latest/block/initial_rtl
+current_goal lint/lint_rtl -top kse_accel_sys
+set_parameter handle_large_bus yes
+run_goal
+exit -save

@@ -1,0 +1,42 @@
+% 图 4-1 KSE SoC 结构框图
+\documentclass[border=4pt]{standalone}
+\input{common.tex}
+\begin{document}
+\begin{tikzpicture}[
+  u/.style={blk, font=\footnotesize, minimum height=7mm, inner sep=2pt},
+  uo/.style={blkO, font=\footnotesize, minimum height=7mm, inner sep=2pt},
+  ug/.style={blkG, font=\footnotesize, minimum height=7mm, inner sep=2pt},
+  up/.style={blkP, font=\footnotesize, minimum height=7mm, inner sep=2pt},
+]
+\node[ug, minimum width=4.2cm, minimum height=1.2cm] (cpu) at (3.5,0) {\textbf{E203}（RV32IMAC）\\ITCM 64 KiB / DTCM 64 KiB};
+\node[ug, minimum width=4.2cm] (biu) at (3.5,-1.3) {BIU};
+\draw[ar] (cpu) -- (biu);
+\node[ug, minimum width=2.0cm, minimum height=1.0cm] (plic) at (11.0,-1.3) {PLIC\\\scriptsize 0x0C00\_0000};
+\draw[arD] (plic.north) |- node[lbl, pos=0.75, above] {外部中断} (cpu.east);
+% 加速器子系统
+\node[up, minimum width=6.2cm] (xbar) at (2.6,-3.6) {系统总线仲裁器（3 进 1 出，DMA > 加载器 > CPU）};
+\node[u, minimum width=2.9cm, minimum height=1.25cm] (bk0) at (1.05,-5.1) {SRAM 控制器\\\scriptsize 64 × RAMSP4096X16};
+\node[up, minimum width=2.9cm, minimum height=1.25cm] (bk1) at (4.15,-5.1) {进度寄存器\\\scriptsize BASE / WPTR / DONE};
+\node[lbl, anchor=north] (sl) at (2.6,-5.85) {共享 SRAM 512 KiB（0x4000\_0000），单个 32 位从口；门铃 0x4008\_0000};
+\draw[<->, draw=cInk, line width=0.6pt] (bk0.north) -- (bk0.north |- xbar.south);
+\draw[<->, draw=cInk, line width=0.6pt] (bk1.north) -- (bk1.north |- xbar.south);
+\node[uo, minimum width=3.1cm, minimum height=1.6cm, align=center] (wrap) at (8.6,-3.6) {\textbf{引擎包装}\\\scriptsize MMIO 寄存器\\\scriptsize 命令队列 / 参数段队列\\\scriptsize 流式 DMA};
+\node[u, minimum width=3.1cm, minimum height=1.25cm, draw=cBlue, fill=cBlueM!50] (eng) at (8.6,-5.4) {\textbf{引擎本体}（kse\_top）};
+\draw[<->, draw=cInk, line width=0.6pt] (wrap) -- (eng);
+\draw[ar] (wrap.west) -- node[lbl, above, pos=0.5] {DMA} (xbar.east);
+\coordinate (xtop) at (2.6,-2.75);
+\begin{scope}[on background layer]
+\node[draw=cGray, dashed, line width=0.6pt, rounded corners=3pt, fit=(xbar)(bk0)(bk1)(sl)(wrap)(eng)(xtop), inner sep=7pt] (sys) {};
+\end{scope}
+\node[ttl, anchor=north west] at ($(sys.south west)+(0,-0.05)$) {\footnotesize 加速器子系统（hfclk 150 MHz，单时钟域）};
+% 总线
+\draw[ar] (2.1,-1.65) -- node[lbl, left, pos=0.25] {存储总线 O5（CPU）} (2.1,-3.25);
+\draw[ar] (4.9,-1.65) -- (4.9,-2.2) -- node[lbl, above] {外设总线 PPI O12（MMIO 0x1100\_0000）} (8.6,-2.2) -- (wrap.north);
+\draw[ar] (biu.east) -- (plic.west);
+\draw[ar, draw=cOrange, line width=0.9pt] (wrap.east |- 0,-3.3) -- (11.0,-3.3) -- node[lbl, right, pos=0.5, text=cOrange!80!black] {中断源 17} (plic.south);
+% 加载器
+\node[ug, minimum width=2.4cm, minimum height=1.0cm] (ldr) at (-3.4,-3.6) {参数加载器\\\scriptsize 32 位 ICB 写入};
+\draw[ar] (ldr.east) -- node[lbl, below, pos=0.45, align=center] {参数\\门铃} (xbar.west);
+\draw[arD] (bk1.east) -- (6.3,-5.1) -- node[lbl, pos=0.35, right] {放行上界} (6.3,-3.95) -- (wrap.west |- 0,-3.95);
+\end{tikzpicture}
+\end{document}

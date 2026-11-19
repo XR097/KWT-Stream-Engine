@@ -16,3 +16,4 @@ simv*
 *.spef
 *.nlib
 *.ndm
+!reports/**/*.log

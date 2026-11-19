@@ -1,0 +1,42 @@
+% 图 4-3 独立 UVM 验证环境与检查链
+\documentclass[border=4pt]{standalone}
+\input{common.tex}
+\begin{document}
+\begin{tikzpicture}[node distance=4mm and 9mm]
+% 激励
+\node[blkG, minimum width=3.3cm, text width=3.1cm] (seq) {\textbf{UVM 序列}\\\footnotesize 定向 / 约束随机\\\footnotesize 错误注入 / 复位\\\footnotesize 随机反压与延迟};
+\node[blkG, minimum width=3.3cm, text width=3.1cm, below=of seq] (agt) {\textbf{Agent}\\\footnotesize ICB 主 / 从\\\footnotesize 数据流、时钟复位\\\footnotesize 真实 E203 固件};
+\node[ttl, above=1.5mm of seq] (t1) {激励};
+% 被测设计
+\node[blk, minimum width=4.6cm, text width=4.4cm, right=12mm of seq.north east, anchor=north west] (u1) {\textbf{单元 / 块级}\\\footnotesize MAC、Softmax、LN、DMA、共享 SRAM 等};
+\node[blk, minimum width=4.6cm, text width=4.4cm, below=2.5mm of u1] (u2) {\textbf{子系统}\\\footnotesize KSE、加载器、DMA、共享 SRAM};
+\node[blk, minimum width=4.6cm, text width=4.4cm, below=2.5mm of u2, draw=cBlue, fill=cBlueM!45] (u3) {\textbf{真实 SoC}\\\footnotesize E203、固件、KSE\\\footnotesize 共享 SRAM、Flash 模型、PLIC};
+\node[grpS, fit=(u1)(u3), inner sep=5pt] (dut) {};
+\node[ttl, above=1.5mm of dut] {被测 RTL（三个层次）};
+\node[blkP, text width=4.4cm, minimum width=4.6cm, below=5mm of dut] (sva) {\textbf{SVA 断言 / 功能覆盖组}\\\footnotesize 握手稳定、数量守恒、四态检查};
+% 参考与比较
+\node[blkO, minimum width=3.0cm, minimum height=1.6cm, text width=2.8cm, right=12mm of u2] (sb) {\textbf{Scoreboard}\\\footnotesize 逐项 / 逐字节\\\footnotesize 零容差比较\\\footnotesize 无遗漏、无重复};
+\node[blkW, text width=3.6cm, minimum width=3.8cm, right=9mm of sb, yshift=4mm] (r1) {\textbf{数值模型 golden}\\\footnotesize 24 样本 × 12 层，SHA256};
+\node[blkW, text width=3.6cm, minimum width=3.8cm, below=2.5mm of r1] (r3) {\textbf{独立 SV 参考模型}\\\footnotesize 字节 / 时序 / 寄存器};
+\node[ttl, above=1.5mm of r1] {参考模型};
+% 连线
+\draw[ar] (seq) -- (agt);
+\draw[arB] (agt.east) -- ++(0.55,0) |- (u1.west);
+\draw[arB] (agt.east) -- ++(0.55,0) |- (u2.west);
+\draw[arB] (agt.east) -- ++(0.55,0) |- (u3.west);
+\draw[arO] (dut.east |- sb.west) -- node[lbl, above] {监测} (sb.west);
+\foreach \n in {r1,r3} \draw[ar] (\n.west) -- ++(-0.45,0) |- (sb.east);
+\draw[arD] (sva.north) -- (dut.south);
+% 结论与证据
+\coordinate (rowy) at ($(sva.south)+(0,-9mm)$);
+\node[blkG, text width=3.9cm, minimum width=4.1cm, minimum height=1.25cm, anchor=north west] (o1) at (seq.west |- rowy) {\textbf{判定}\\\footnotesize TEST PASSED、完成标记\\\footnotesize UVM\_ERROR / FATAL 为 0};
+\node[blkG, text width=3.9cm, minimum width=4.1cm, minimum height=1.25cm, right=5mm of o1] (o2) {\textbf{检查器有效性}\\\footnotesize 指定负测、变异测试\\\footnotesize 只命中目标检查器};
+\node[blkG, text width=3.9cm, minimum width=4.1cm, minimum height=1.25cm, right=5mm of o2] (o3) {\textbf{URG 覆盖率}\\\footnotesize 代码、断言、功能覆盖\\\footnotesize 按对象与配置分别统计};
+\node[blkG, text width=3.9cm, minimum width=4.1cm, minimum height=1.25cm, right=5mm of o3] (o4) {\textbf{证据记录}\\\footnotesize 源码哈希、种子、命令\\\footnotesize Verdi 波形实读};
+\coordinate (busy) at ($(o1.north)+(0,4mm)$);
+\draw[draw=cInk, line width=0.6pt] (o1.north |- busy) -- (o4.north |- busy);
+\foreach \n in {o1,o2,o3,o4} \draw[ar] (\n.north |- busy) -- (\n.north);
+\draw[ar] (sb.south) -- (sb.south |- busy);
+\draw[arD] (sva.south) -- (sva.south |- busy);
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,22 @@
+ 
+****************************************
+Report : clocks
+Design : kse_e203_soc_top
+Version: X-2025.06-SP4
+Date   : Fri Nov 13 16:07:10 2026
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+core          6.666999817 {0 3.3335}        f         {hfextclk}
+jtag          6.666999817 {0 3.3335}        f         {io_pads_jtag_TCK_i_ival}
+slow          110.000000000 {0 55}          f         {lfextclk}
+--------------------------------------------------------------------------------
+1

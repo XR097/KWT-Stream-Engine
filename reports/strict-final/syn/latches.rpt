@@ -1,0 +1,17 @@
+ 
+****************************************
+Report : cell
+Design : kse_e203_soc_top
+Version: X-2025.06-SP4
+Date   : Fri Nov 13 16:07:25 2026
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+15 latch cells (all E203 clock-gate enables); total area 35.910000801 um2; per-instance list omitted
+1

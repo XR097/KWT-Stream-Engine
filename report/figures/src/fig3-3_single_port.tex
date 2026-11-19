@@ -1,0 +1,54 @@
+% 图 3-3 单口共享 SRAM 上加载器写、DMA 读与门铃的时序示意（未按实测比例）
+\documentclass[border=4pt]{standalone}
+\input{common.tex}
+\begin{document}
+\begin{tikzpicture}[x=1.15cm, y=1cm,
+  lw/.style={draw=white, fill=cGray!80, line width=0.3pt, minimum height=0.55cm, anchor=south west, inner sep=0},
+  dr/.style={draw=white, fill=cBlue!75, line width=0.3pt, minimum height=0.55cm, anchor=south west, inner sep=0},
+  eg/.style={draw=cBlue, fill=cBlueL, line width=0.5pt, minimum height=0.55cm, anchor=south west, inner sep=0, font=\footnotesize},
+  ea/.style={draw=cOrange, fill=cOrange!25, line width=0.5pt, minimum height=0.55cm, anchor=south west, inner sep=0, font=\footnotesize},
+  db/.style={fill=cPurple, draw=none, isosceles triangle, isosceles triangle apex angle=60, shape border rotate=270, minimum size=2.2mm, inner sep=0},
+]
+% 行标签
+\node[anchor=east, font=\footnotesize] at (-0.15,1.775) {共享 SRAM 端口};
+\node[anchor=east, font=\footnotesize] at (-0.15,0.275) {KSE 引擎};
+% 端口：首批只有加载器写
+\node[lw, minimum width=1.15cm*1.2] at (0,1.5) {};
+\node[font=\scriptsize, text=white] at (0.6,1.775) {首批};
+% 交替段 1：DMA 读与加载器写 1:1 交替
+\foreach \i in {0,...,15} {
+  \pgfmathsetmacro{\x}{1.2+0.25*\i}
+  \ifodd\i \node[lw, minimum width=1.15cm*0.25] at (\x,1.5) {}; \else \node[dr, minimum width=1.15cm*0.25] at (\x,1.5) {}; \fi
+}
+% 只有加载器：引擎处于注意力 / LayerNorm 阶段
+\node[lw, minimum width=1.15cm*2.0] at (5.2,1.5) {};
+\node[font=\scriptsize, text=white] at (6.2,1.775) {加载器独占端口};
+% 交替段 2
+\foreach \i in {0,...,11} {
+  \pgfmathsetmacro{\x}{7.2+0.25*\i}
+  \ifodd\i \node[lw, minimum width=1.15cm*0.25] at (\x,1.5) {}; \else \node[dr, minimum width=1.15cm*0.25] at (\x,1.5) {}; \fi
+}
+% 门铃：每写完 1,024 字发布一次写指针
+\foreach \x in {1.2,3.2,5.2,6.2,7.2,9.2} \node[db] at (\x,2.2) {};
+\node[font=\scriptsize, text=cPurple, anchor=west] at (9.35,2.2) {WPTR 门铃};
+\draw[decorate, decoration={brace, amplitude=4pt}, draw=cGray] (1.2,2.45) -- (3.2,2.45) node[midway, above=4pt, lbl] {交替时 1,024 字约 2,048 拍};
+\draw[decorate, decoration={brace, amplitude=4pt}, draw=cGray] (5.2,2.45) -- (6.2,2.45) node[midway, above=4pt, lbl] {约 1,024 拍};
+% 引擎
+\node[ea, minimum width=1.15cm*1.2] at (0,0) {等待首批};
+\node[eg, minimum width=1.15cm*4.0] at (1.2,0) {矩阵乘：消费参数，约 0.5 字/拍};
+\node[ea, minimum width=1.15cm*2.0] at (5.2,0) {注意力 / LN};
+\node[eg, minimum width=1.15cm*3.0] at (7.2,0) {矩阵乘：消费参数};
+\draw[arD] (1.2,1.5) -- (1.2,0.55);
+\node[lbl, anchor=north] at (1.2,-0.05) {\scriptsize 放行：A + 4 $\le$ WPTR};
+% 时间轴
+\draw[->, draw=cInk, line width=0.6pt] (0,-0.75) -- (10.5,-0.75) node[right, font=\footnotesize] {周期};
+% 图例
+\node[lw, minimum width=4mm, minimum height=3mm, anchor=center] (l0) at (0.2,3.3) {};
+\node[anchor=west, font=\scriptsize] at (l0.east) {加载器写（含门铃）};
+\node[dr, minimum width=4mm, minimum height=3mm, anchor=center] (l1) at (3.0,3.3) {};
+\node[anchor=west, font=\scriptsize] at (l1.east) {DMA 读（优先）};
+\node[ea, minimum width=4mm, minimum height=3mm, anchor=center] (l2) at (5.5,3.3) {};
+\node[anchor=west, font=\scriptsize] at (l2.east) {引擎不读参数的阶段};
+\node[anchor=west, font=\scriptsize, text=cGray] at (0.05,-1.2) {示意图，未按实测比例；端口每拍至多完成一笔事务};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,16 @@
+optimization_uncertainty_ns=0.11
+reported_uncertainty_ns=0.1
+accel_max_slack_ns=0.0102758
+accel_min_slack_ns=0.0138704
+e203_max_slack_ns=0
+e203_min_slack_ns=0.02624
+core_max_slack_ns=0.580132
+core_min_slack_ns=0.0402725
+slow_max_slack_ns=105.574
+slow_min_slack_ns=0.0405447
+jtag_max_slack_ns=1.32592
+jtag_min_slack_ns=0.0652437
+total_area_um2=
+macros=120
+flip_flops=82990
+latches=15

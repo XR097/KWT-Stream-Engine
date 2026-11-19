@@ -1,0 +1,179 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Notice: timing checks disabled with +notimingcheck at compile-time
+Chronologic VCS simulator copyright 1991-2025
+Contains Synopsys proprietary information.
+Compiler version X-2025.06-SP1_Full64; Runtime version X-2025.06-SP1_Full64;  Nov 13 14:03 2026
+[LOADER] image loaded from <WORK>/asic-explore/strict_final/run/soc/data/tasks/task_00_img.hex
+*Verdi* Loading libsscore_vcs202506.so
+FSDB Dumper for VCS, Release Verdi_X-2025.06-SP1, Linux x86_64/64bit, 09/06/2025
+(C) 1996 - 2025 by Synopsys, Inc.
+*Verdi* : Create FSDB file 'win.fsdb'
+*Verdi* : Begin traversing the scope (tb_kse_soc.u_soc), layer (0).
+*Verdi* : Enable +mda dumping.
+*Verdi* : End of traversing.
+*Verdi* : fsdbDumpon - All FSDB files at 29,911,495,500 fs.
+ACTIVITY fsdb on for task 5 at cycle 151 t_ns=29911.496
+*Verdi* : fsdbDumpoff - All FSDB files at 1,118,819,271,500 fs.
+ACTIVITY fsdb off at cycle 163479 t_ns=1118819.272
+DOORBELLS task=5 count=81
+CROSS_LAYER task=5 early_commands=11
+CROSS_MAC task=5 layer=1 steps=0
+CROSS_MAC task=5 layer=2 steps=9
+CROSS_MAC task=5 layer=3 steps=0
+CROSS_MAC task=5 layer=4 steps=9
+CROSS_MAC task=5 layer=5 steps=9
+CROSS_MAC task=5 layer=6 steps=9
+CROSS_MAC task=5 layer=7 steps=9
+CROSS_MAC task=5 layer=8 steps=0
+CROSS_MAC task=5 layer=9 steps=9
+CROSS_MAC task=5 layer=10 steps=0
+CROSS_MAC task=5 layer=11 steps=9
+LAYER_PHASE task=5 layer=0 phase=1 cycles=3599
+LAYER_PHASE task=5 layer=0 phase=2 cycles=3859
+LAYER_PHASE task=5 layer=0 phase=3 cycles=1131
+LAYER_PHASE task=5 layer=0 phase=4 cycles=958
+LAYER_PHASE task=5 layer=0 phase=5 cycles=508
+LAYER_PHASE task=5 layer=0 phase=6 cycles=651
+LAYER_PHASE task=5 layer=0 phase=7 cycles=473
+LAYER_PHASE task=5 layer=0 phase=8 cycles=1535
+LAYER_PHASE task=5 layer=0 phase=9 cycles=4396
+LAYER_PHASE task=5 layer=0 phase=10 cycles=1
+LAYER_PHASE task=5 layer=1 phase=2 cycles=3101
+LAYER_PHASE task=5 layer=1 phase=3 cycles=1131
+LAYER_PHASE task=5 layer=1 phase=4 cycles=958
+LAYER_PHASE task=5 layer=1 phase=5 cycles=508
+LAYER_PHASE task=5 layer=1 phase=6 cycles=651
+LAYER_PHASE task=5 layer=1 phase=7 cycles=473
+LAYER_PHASE task=5 layer=1 phase=8 cycles=2213
+LAYER_PHASE task=5 layer=1 phase=9 cycles=4745
+LAYER_PHASE task=5 layer=1 phase=10 cycles=1
+LAYER_PHASE task=5 layer=2 phase=2 cycles=2073
+LAYER_PHASE task=5 layer=2 phase=3 cycles=1131
+LAYER_PHASE task=5 layer=2 phase=4 cycles=958
+LAYER_PHASE task=5 layer=2 phase=5 cycles=508
+LAYER_PHASE task=5 layer=2 phase=6 cycles=651
+LAYER_PHASE task=5 layer=2 phase=7 cycles=473
+LAYER_PHASE task=5 layer=2 phase=8 cycles=2213
+LAYER_PHASE task=5 layer=2 phase=9 cycles=4745
+LAYER_PHASE task=5 layer=2 phase=10 cycles=1
+LAYER_PHASE task=5 layer=3 phase=2 cycles=3101
+LAYER_PHASE task=5 layer=3 phase=3 cycles=1131
+LAYER_PHASE task=5 layer=3 phase=4 cycles=958
+LAYER_PHASE task=5 layer=3 phase=5 cycles=508
+LAYER_PHASE task=5 layer=3 phase=6 cycles=651
+LAYER_PHASE task=5 layer=3 phase=7 cycles=473
+LAYER_PHASE task=5 layer=3 phase=8 cycles=2214
+LAYER_PHASE task=5 layer=3 phase=9 cycles=4745
+LAYER_PHASE task=5 layer=3 phase=10 cycles=1
+LAYER_PHASE task=5 layer=4 phase=2 cycles=2073
+LAYER_PHASE task=5 layer=4 phase=3 cycles=1131
+LAYER_PHASE task=5 layer=4 phase=4 cycles=958
+LAYER_PHASE task=5 layer=4 phase=5 cycles=508
+LAYER_PHASE task=5 layer=4 phase=6 cycles=651
+LAYER_PHASE task=5 layer=4 phase=7 cycles=473
+LAYER_PHASE task=5 layer=4 phase=8 cycles=2213
+LAYER_PHASE task=5 layer=4 phase=9 cycles=4745
+LAYER_PHASE task=5 layer=4 phase=10 cycles=1
+LAYER_PHASE task=5 layer=5 phase=2 cycles=3101
+LAYER_PHASE task=5 layer=5 phase=3 cycles=1131
+LAYER_PHASE task=5 layer=5 phase=4 cycles=958
+LAYER_PHASE task=5 layer=5 phase=5 cycles=508
+LAYER_PHASE task=5 layer=5 phase=6 cycles=651
+LAYER_PHASE task=5 layer=5 phase=7 cycles=473
+LAYER_PHASE task=5 layer=5 phase=8 cycles=2214
+LAYER_PHASE task=5 layer=5 phase=9 cycles=4745
+LAYER_PHASE task=5 layer=5 phase=10 cycles=1
+LAYER_PHASE task=5 layer=6 phase=2 cycles=2073
+LAYER_PHASE task=5 layer=6 phase=3 cycles=1131
+LAYER_PHASE task=5 layer=6 phase=4 cycles=958
+LAYER_PHASE task=5 layer=6 phase=5 cycles=508
+LAYER_PHASE task=5 layer=6 phase=6 cycles=651
+LAYER_PHASE task=5 layer=6 phase=7 cycles=473
+LAYER_PHASE task=5 layer=6 phase=8 cycles=2213
+LAYER_PHASE task=5 layer=6 phase=9 cycles=4745
+LAYER_PHASE task=5 layer=6 phase=10 cycles=1
+LAYER_PHASE task=5 layer=7 phase=2 cycles=3101
+LAYER_PHASE task=5 layer=7 phase=3 cycles=1131
+LAYER_PHASE task=5 layer=7 phase=4 cycles=958
+LAYER_PHASE task=5 layer=7 phase=5 cycles=508
+LAYER_PHASE task=5 layer=7 phase=6 cycles=651
+LAYER_PHASE task=5 layer=7 phase=7 cycles=473
+LAYER_PHASE task=5 layer=7 phase=8 cycles=1535
+LAYER_PHASE task=5 layer=7 phase=9 cycles=4396
+LAYER_PHASE task=5 layer=7 phase=10 cycles=1
+LAYER_PHASE task=5 layer=8 phase=2 cycles=3101
+LAYER_PHASE task=5 layer=8 phase=3 cycles=1131
+LAYER_PHASE task=5 layer=8 phase=4 cycles=958
+LAYER_PHASE task=5 layer=8 phase=5 cycles=508
+LAYER_PHASE task=5 layer=8 phase=6 cycles=651
+LAYER_PHASE task=5 layer=8 phase=7 cycles=473
+LAYER_PHASE task=5 layer=8 phase=8 cycles=2213
+LAYER_PHASE task=5 layer=8 phase=9 cycles=4745
+LAYER_PHASE task=5 layer=8 phase=10 cycles=1
+LAYER_PHASE task=5 layer=9 phase=2 cycles=2073
+LAYER_PHASE task=5 layer=9 phase=3 cycles=1131
+LAYER_PHASE task=5 layer=9 phase=4 cycles=958
+LAYER_PHASE task=5 layer=9 phase=5 cycles=508
+LAYER_PHASE task=5 layer=9 phase=6 cycles=651
+LAYER_PHASE task=5 layer=9 phase=7 cycles=473
+LAYER_PHASE task=5 layer=9 phase=8 cycles=2213
+LAYER_PHASE task=5 layer=9 phase=9 cycles=4745
+LAYER_PHASE task=5 layer=9 phase=10 cycles=1
+LAYER_PHASE task=5 layer=10 phase=2 cycles=3101
+LAYER_PHASE task=5 layer=10 phase=3 cycles=1131
+LAYER_PHASE task=5 layer=10 phase=4 cycles=958
+LAYER_PHASE task=5 layer=10 phase=5 cycles=508
+LAYER_PHASE task=5 layer=10 phase=6 cycles=651
+LAYER_PHASE task=5 layer=10 phase=7 cycles=473
+LAYER_PHASE task=5 layer=10 phase=8 cycles=2214
+LAYER_PHASE task=5 layer=10 phase=9 cycles=4745
+LAYER_PHASE task=5 layer=10 phase=10 cycles=1
+LAYER_PHASE task=5 layer=11 phase=2 cycles=2073
+LAYER_PHASE task=5 layer=11 phase=3 cycles=1131
+LAYER_PHASE task=5 layer=11 phase=4 cycles=958
+LAYER_PHASE task=5 layer=11 phase=5 cycles=508
+LAYER_PHASE task=5 layer=11 phase=6 cycles=651
+LAYER_PHASE task=5 layer=11 phase=7 cycles=473
+LAYER_PHASE task=5 layer=11 phase=8 cycles=2213
+LAYER_PHASE task=5 layer=11 phase=9 cycles=4441
+LAYER_PHASE task=5 layer=11 phase=10 cycles=89
+LAYER_PHASE task=5 layer=11 phase=11 cycles=802
+LAYER_PHASE task=5 layer=11 phase=12 cycles=1
+TASK 5 sample=10 label=5 window_cycles=163328 compared_bytes=6336 mismatches=0 errors=0 PASS
+BREAKDOWN task=5 start_flag_to_first_write=2 first_write_to_cmd0=47 loader_span=160796 loader_words=80592 loader_stall=80530
+BREAKDOWN task=5 engine_cmd0_to_done11=163126 kse_busy=163125 drain_done11_to_evt=1 evt11_to_flag=154 awake_cycles=2231 irqs=12
+BREAKDOWN task=5 dma_reads=80592 dma_writes=1584 dma_bus_stall=0 dma_rule_wait=56549 param_starve=43749 act_in_starve=2012 cpu_shram_accesses=2 cpu_stall=0
+BUS task=5 sram_port_busy=162850 sram_port_idle=479 window_cycles=163328 utilization=0.9971 master_hs_multi=0 sram_hs_mismatch=0 macro_group_overflow=0
+PHASE task=5 phase=1 layer0_cycles=3599 layer1_cycles=0
+PHASE task=5 phase=2 layer0_cycles=3859 layer1_cycles=3013
+PHASE task=5 phase=3 layer0_cycles=1131 layer1_cycles=1131
+PHASE task=5 phase=4 layer0_cycles=958 layer1_cycles=958
+PHASE task=5 phase=5 layer0_cycles=508 layer1_cycles=508
+PHASE task=5 phase=6 layer0_cycles=651 layer1_cycles=651
+PHASE task=5 phase=7 layer0_cycles=473 layer1_cycles=473
+PHASE task=5 phase=8 layer0_cycles=1535 layer1_cycles=2213
+PHASE task=5 phase=9 layer0_cycles=4396 layer1_cycles=4745
+PHASE task=5 phase=10 layer0_cycles=1 layer1_cycles=1
+LAYER task=5 layer=0 cmd=47 done=17246 cycles=17199 gap_from_prev_done=0
+LAYER task=5 layer=1 cmd=17158 done=31027 cycles=13869 gap_from_prev_done=-88
+LAYER task=5 layer=2 cmd=30939 done=43780 cycles=12841 gap_from_prev_done=-88
+LAYER task=5 layer=3 cmd=43692 done=57562 cycles=13870 gap_from_prev_done=-88
+LAYER task=5 layer=4 cmd=57474 done=70315 cycles=12841 gap_from_prev_done=-88
+LAYER task=5 layer=5 cmd=70227 done=84097 cycles=13870 gap_from_prev_done=-88
+LAYER task=5 layer=6 cmd=84009 done=96850 cycles=12841 gap_from_prev_done=-88
+LAYER task=5 layer=7 cmd=96762 done=109604 cycles=12842 gap_from_prev_done=-88
+LAYER task=5 layer=8 cmd=109516 done=123385 cycles=13869 gap_from_prev_done=-88
+LAYER task=5 layer=9 cmd=123297 done=136138 cycles=12841 gap_from_prev_done=-88
+LAYER task=5 layer=10 cmd=136050 done=149920 cycles=13870 gap_from_prev_done=-88
+LAYER task=5 layer=11 cmd=149832 done=163173 cycles=13341 gap_from_prev_done=-88
+==== KSE SoC regression ====
+SUMMARY tasks=1 pass=1 fail=0
+SUMMARY total_window_cycles=163328 mean_window_cycles=163328.0 min=163328 max=163328 throughput_at_150MHz=918.40 tasks/s
+TEST PASSED
+$finish called from file "<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_kse_soc.sv", line 598.
+$finish at simulation time         111884693950
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1118846939500 fs
+CPU Time:    122.220 seconds;       Data structure size:   5.2Mb
+Fri Nov 13 14:04:06 2026

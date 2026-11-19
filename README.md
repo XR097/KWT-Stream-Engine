@@ -56,6 +56,9 @@ docs/arch/               微架构说明
 docs/spec/               引擎、SoC、共享 SRAM 规格
 docs/quantization/       量化环境、数值实验与结果
 docs/history.md          版本演进与各版实测数字
+report/                  设计报告源稿（Markdown、图源）、构建脚本与 PDF
+reports/strict-final/    strict-final 综合、功耗、仿真与 lint 的原始汇总报告
+verification/uvm/        KSE UVM 验证环境（运行脚本在 tools/verif_tool/vcs）
 scripts/compile_check.sh 只编译、不运行的全局编译检查
 third-party/e203         E203 (hbirdv2) 子模块
 third-party/kwt          ARM keyword-transformer 子模块（KWT 模型与 checkpoint）
@@ -90,8 +93,8 @@ KWT-1 checkpoint。
 ./scripts/compile_check.sh
 ```
 
-脚本只编译引擎单元、引擎顶层、SoC、共享 SRAM 单元测试和固件，并做 Python 语法检查，
-不执行生成的仿真二进制，不产生波形。需要 VCS 和 RISC-V GCC。
+脚本只编译引擎单元、引擎顶层、SoC、共享 SRAM 单元测试、UVM 顶层和固件，并做 Python 语法检查，
+不执行生成的仿真二进制，不产生波形。需要 VCS 和 RISC-V GCC。含 FSDB 调用的 UVM 顶层需要设置 `VERDI_HOME`，未设置时这几项输出 SKIP；`tb_kse_soc_uvm` 通过后门访问厂商 SRAM 宏模型的内部阵列，只在 `KSE_PDK_MODELS=1` 时编译。
 
 ### 4. 引擎仿真
 
@@ -151,7 +154,9 @@ python -B quantization/scripts/run_asic_numerics.py \
 
 ### 7. 设计报告与验证材料
 
-设计报告、综合/功耗/验证的汇总报告和 UVM 验证环境将在后续版本中发布。
+- 设计报告：[report/build/设计报告初稿.pdf](report/build/设计报告初稿.pdf)。源稿在 `report/draft/`，构建方法见 [report/README.md](report/README.md)。
+- 原始汇总报告：[reports/strict-final/](reports/strict-final/README.md)，包括 DC 面积、QoR 和时序检查，三种翻转率下的 PrimePower 功耗，单元和 SoC 回归的 VCS 日志，以及 SpyGlass lint。为了只保留汇总信息，逐实例的路径、库单元和逐宏功耗明细已经删去，README 里列出了删掉的内容。
+- UVM 验证环境：[verification/README.md](verification/README.md)。覆盖率数字见设计报告第 4.4 节。
 
 ### 8. 综合、时序与功耗（可选）
 
@@ -203,3 +208,6 @@ KSE_REPO=$PWD dc_shell -no_home_init -f tools/kse/synth_kse.tcl
 | [docs/spec/kse_shared_sram.md](docs/spec/kse_shared_sram.md) | 共享 SRAM 单口从设备、仲裁、门铃与单元测试 |
 | [docs/history.md](docs/history.md) | 各版本的关键改动与实测 PPA |
 | [docs/quantization/](docs/quantization/) | 量化环境、数值实验与结果 |
+| [report/](report/README.md) | 设计报告源稿、图与 PDF |
+| [reports/strict-final/](reports/strict-final/README.md) | 综合、功耗、仿真和 lint 的原始汇总报告 |
+| [verification/](verification/README.md) | UVM 验证环境 |

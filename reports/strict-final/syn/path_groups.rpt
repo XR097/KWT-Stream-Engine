@@ -1,0 +1,518 @@
+Module: DW01_cmp6_width6, Ports: 19, Input: 13, Output: 6, Inout: 0
+Module: DW01_cmp6_width6, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width6, Ports: 12, Input: 6, Output: 6, Inout: 0
+Module: DW01_inc_width6, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width5, Ports: 14, Input: 12, Output: 2, Inout: 0
+Module: DW01_cmp2_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width10, Ports: 24, Input: 22, Output: 2, Inout: 0
+Module: DW01_cmp2_width10, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width4, Ports: 14, Input: 9, Output: 5, Inout: 0
+Module: DW01_add_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width4, Ports: 14, Input: 9, Output: 5, Inout: 0
+Module: DW01_add_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width21, Ports: 46, Input: 44, Output: 2, Inout: 0
+Module: DW01_cmp2_width21, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width20, Ports: 62, Input: 41, Output: 21, Inout: 0
+Module: DW01_add_width20, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width20, Ports: 62, Input: 41, Output: 21, Inout: 0
+Module: DW01_add_width20, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width3, Ports: 11, Input: 7, Output: 4, Inout: 0
+Module: DW01_add_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width3, Ports: 11, Input: 7, Output: 4, Inout: 0
+Module: DW01_add_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width3, Ports: 11, Input: 7, Output: 4, Inout: 0
+Module: DW01_sub_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width3, Ports: 11, Input: 7, Output: 4, Inout: 0
+Module: DW01_sub_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width17, Ports: 34, Input: 17, Output: 17, Inout: 0
+Module: DW01_inc_width17, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_dec_width17, Ports: 34, Input: 17, Output: 17, Inout: 0
+Module: DW01_dec_width17, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_dec_width11, Ports: 22, Input: 11, Output: 11, Inout: 0
+Module: DW01_dec_width11, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width16, Ports: 32, Input: 16, Output: 16, Inout: 0
+Module: DW01_inc_width16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width2, Ports: 11, Input: 5, Output: 6, Inout: 0
+Module: DW01_cmp6_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width84_SH_width7, Ports: 177, Input: 93, Output: 84, Inout: 0
+Module: DW01_ash_A_width84_SH_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width2, Ports: 4, Input: 2, Output: 2, Inout: 0
+Module: DW01_inc_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width2, Ports: 8, Input: 6, Output: 2, Inout: 0
+Module: DW01_cmp2_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width32, Ports: 98, Input: 65, Output: 33, Inout: 0
+Module: DW01_add_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width32, Ports: 98, Input: 65, Output: 33, Inout: 0
+Module: DW01_add_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width3, Ports: 10, Input: 8, Output: 2, Inout: 0
+Module: DW01_cmp2_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width64, Ports: 128, Input: 64, Output: 64, Inout: 0
+Module: DW01_inc_width64, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width64, Ports: 132, Input: 130, Output: 2, Inout: 0
+Module: DW01_cmp2_width64, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width6_SH_width3, Ports: 17, Input: 11, Output: 6, Inout: 0
+Module: DW01_ash_A_width6_SH_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width17, Ports: 41, Input: 35, Output: 6, Inout: 0
+Module: DW01_cmp6_width17, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width2_SH_width3, Ports: 9, Input: 7, Output: 2, Inout: 0
+Module: DW01_ash_A_width2_SH_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_dec_width5, Ports: 10, Input: 5, Output: 5, Inout: 0
+Module: DW01_dec_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width5_SH_width3, Ports: 15, Input: 10, Output: 5, Inout: 0
+Module: DW01_ash_A_width5_SH_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width29_SH_width5, Ports: 65, Input: 36, Output: 29, Inout: 0
+Module: DW01_ash_A_width29_SH_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width3, Ports: 13, Input: 7, Output: 6, Inout: 0
+Module: DW01_cmp6_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width3, Ports: 6, Input: 3, Output: 3, Inout: 0
+Module: DW01_inc_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width16, Ports: 39, Input: 33, Output: 6, Inout: 0
+Module: DW01_cmp6_width16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width5, Ports: 10, Input: 5, Output: 5, Inout: 0
+Module: DW01_inc_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width4, Ports: 8, Input: 4, Output: 4, Inout: 0
+Module: DW01_inc_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_dec_width3, Ports: 6, Input: 3, Output: 3, Inout: 0
+Module: DW01_dec_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width9, Ports: 25, Input: 19, Output: 6, Inout: 0
+Module: DW01_cmp6_width9, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width11, Ports: 26, Input: 24, Output: 2, Inout: 0
+Module: DW01_cmp2_width11, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width8, Ports: 26, Input: 17, Output: 9, Inout: 0
+Module: DW01_sub_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width8, Ports: 26, Input: 17, Output: 9, Inout: 0
+Module: DW01_sub_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width7, Ports: 23, Input: 15, Output: 8, Inout: 0
+Module: DW01_sub_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width7, Ports: 23, Input: 15, Output: 8, Inout: 0
+Module: DW01_sub_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width11, Ports: 22, Input: 11, Output: 11, Inout: 0
+Module: DW01_inc_width11, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width8, Ports: 20, Input: 18, Output: 2, Inout: 0
+Module: DW01_cmp2_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width2, Ports: 8, Input: 5, Output: 3, Inout: 0
+Module: DW01_add_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width2, Ports: 8, Input: 5, Output: 3, Inout: 0
+Module: DW01_add_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width8, Ports: 16, Input: 8, Output: 8, Inout: 0
+Module: DW01_inc_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width2, Ports: 8, Input: 5, Output: 3, Inout: 0
+Module: DW01_sub_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width2, Ports: 8, Input: 5, Output: 3, Inout: 0
+Module: DW01_sub_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width7, Ports: 23, Input: 15, Output: 8, Inout: 0
+Module: DW01_add_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width7, Ports: 23, Input: 15, Output: 8, Inout: 0
+Module: DW01_add_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width42, Ports: 84, Input: 42, Output: 42, Inout: 0
+Module: DW01_inc_width42, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW_rash_A_width47_SH_width4, Ports: 100, Input: 53, Output: 47, Inout: 0
+Module: DW_rash_A_width47_SH_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width32, Ports: 68, Input: 66, Output: 2, Inout: 0
+Module: DW01_cmp2_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width6, Ports: 20, Input: 13, Output: 7, Inout: 0
+Module: DW01_add_width6, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width6, Ports: 20, Input: 13, Output: 7, Inout: 0
+Module: DW01_add_width6, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width26, Ports: 52, Input: 26, Output: 26, Inout: 0
+Module: DW01_inc_width26, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW_rash_A_width31_SH_width4, Ports: 68, Input: 37, Output: 31, Inout: 0
+Module: DW_rash_A_width31_SH_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width16, Ports: 36, Input: 34, Output: 2, Inout: 0
+Module: DW01_cmp2_width16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width4, Ports: 15, Input: 9, Output: 6, Inout: 0
+Module: DW01_cmp6_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width8, Ports: 23, Input: 17, Output: 6, Inout: 0
+Module: DW01_cmp6_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width4, Ports: 12, Input: 10, Output: 2, Inout: 0
+Module: DW01_cmp2_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width32, Ports: 64, Input: 32, Output: 32, Inout: 0
+Module: DW01_inc_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width32, Ports: 71, Input: 65, Output: 6, Inout: 0
+Module: DW01_cmp6_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_dec_width4, Ports: 8, Input: 4, Output: 4, Inout: 0
+Module: DW01_dec_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_dec_width16, Ports: 32, Input: 16, Output: 16, Inout: 0
+Module: DW01_dec_width16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_dec_width14, Ports: 28, Input: 14, Output: 14, Inout: 0
+Module: DW01_dec_width14, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width9, Ports: 29, Input: 19, Output: 10, Inout: 0
+Module: DW01_add_width9, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width9, Ports: 29, Input: 19, Output: 10, Inout: 0
+Module: DW01_add_width9, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width9, Ports: 22, Input: 20, Output: 2, Inout: 0
+Module: DW01_cmp2_width9, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width7, Ports: 14, Input: 7, Output: 7, Inout: 0
+Module: DW01_inc_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width8, Ports: 26, Input: 17, Output: 9, Inout: 0
+Module: DW01_add_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width8, Ports: 26, Input: 17, Output: 9, Inout: 0
+Module: DW01_add_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width5, Ports: 17, Input: 11, Output: 6, Inout: 0
+Module: DW01_add_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width5, Ports: 17, Input: 11, Output: 6, Inout: 0
+Module: DW01_add_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_dec_width10, Ports: 20, Input: 10, Output: 10, Inout: 0
+Module: DW01_dec_width10, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width11, Ports: 29, Input: 23, Output: 6, Inout: 0
+Module: DW01_cmp6_width11, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width32_SH_width5, Ports: 71, Input: 39, Output: 32, Inout: 0
+Module: DW01_ash_A_width32_SH_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW02_mult_A_width5_B_width1, Ports: 13, Input: 7, Output: 6, Inout: 0
+Module: DW02_mult_A_width5_B_width1, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width5_B_width1'
+Module: DW01_MUX, Ports: 4, Input: 3, Output: 1, Inout: 0
+Module: DW01_MUX, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_mmux_width2, Ports: 7, Input: 5, Output: 2, Inout: 0
+Module: DW01_mmux_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_mmux_width3, Ports: 10, Input: 7, Output: 3, Inout: 0
+Module: DW01_mmux_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_mmux_width4, Ports: 13, Input: 9, Output: 4, Inout: 0
+Module: DW01_mmux_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_mmux_width5, Ports: 16, Input: 11, Output: 5, Inout: 0
+Module: DW01_mmux_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_absval_width5, Ports: 10, Input: 5, Output: 5, Inout: 0
+Module: DW01_absval_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_absval_width5'
+Module: DW01_inc_width5, Ports: 10, Input: 5, Output: 5, Inout: 0
+Module: DW01_inc_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_absval_width1, Ports: 2, Input: 1, Output: 1, Inout: 0
+Module: DW01_absval_width1, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_absval_width1'
+Module: DW01_inc_width1, Ports: 2, Input: 1, Output: 1, Inout: 0
+Module: DW01_inc_width1, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width6, Ports: 12, Input: 6, Output: 6, Inout: 0
+Module: DW01_inc_width6, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width7, Ports: 18, Input: 16, Output: 2, Inout: 0
+Module: DW01_cmp2_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW02_mult_A_width7_B_width4, Ports: 23, Input: 12, Output: 11, Inout: 0
+Module: DW02_mult_A_width7_B_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width7_B_width4'
+Module: DW01_add_width9, Ports: 29, Input: 19, Output: 10, Inout: 0
+Module: DW01_add_width9, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width10, Ports: 32, Input: 21, Output: 11, Inout: 0
+Module: DW01_add_width10, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width10, Ports: 32, Input: 21, Output: 11, Inout: 0
+Module: DW01_add_width10, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width9, Ports: 18, Input: 9, Output: 9, Inout: 0
+Module: DW01_inc_width9, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW02_mult_A_width2_B_width8, Ports: 21, Input: 11, Output: 10, Inout: 0
+Module: DW02_mult_A_width2_B_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width2_B_width8'
+Module: DW01_add_width8, Ports: 26, Input: 17, Output: 9, Inout: 0
+Module: DW01_add_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_absval_width2, Ports: 4, Input: 2, Output: 2, Inout: 0
+Module: DW01_absval_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_absval_width2'
+Module: DW01_inc_width2, Ports: 4, Input: 2, Output: 2, Inout: 0
+Module: DW01_inc_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_absval_width8, Ports: 16, Input: 8, Output: 8, Inout: 0
+Module: DW01_absval_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_absval_width8'
+Module: DW01_inc_width8, Ports: 16, Input: 8, Output: 8, Inout: 0
+Module: DW01_inc_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width10, Ports: 20, Input: 10, Output: 10, Inout: 0
+Module: DW01_inc_width10, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW02_mult_A_width4_B_width7, Ports: 23, Input: 12, Output: 11, Inout: 0
+Module: DW02_mult_A_width4_B_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width4_B_width7'
+Module: DW01_sub_width4, Ports: 14, Input: 9, Output: 5, Inout: 0
+Module: DW01_sub_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width4, Ports: 14, Input: 9, Output: 5, Inout: 0
+Module: DW01_sub_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW_rash_A_width16_SH_width4, Ports: 38, Input: 22, Output: 16, Inout: 0
+Module: DW_rash_A_width16_SH_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width5, Ports: 17, Input: 11, Output: 6, Inout: 0
+Module: DW01_cmp6_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width4_SH_width2, Ports: 12, Input: 8, Output: 4, Inout: 0
+Module: DW01_ash_A_width4_SH_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW_rash_A_width32_SH_width5, Ports: 71, Input: 39, Output: 32, Inout: 0
+Module: DW_rash_A_width32_SH_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_dec_width12, Ports: 24, Input: 12, Output: 12, Inout: 0
+Module: DW01_dec_width12, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW02_mult_A_width9_B_width8, Ports: 35, Input: 18, Output: 17, Inout: 0
+Module: DW02_mult_A_width9_B_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width9_B_width8'
+Module: DW01_add_width15, Ports: 47, Input: 31, Output: 16, Inout: 0
+Module: DW01_add_width15, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width18, Ports: 56, Input: 37, Output: 19, Inout: 0
+Module: DW01_add_width18, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width18, Ports: 56, Input: 37, Output: 19, Inout: 0
+Module: DW01_add_width18, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width19, Ports: 59, Input: 39, Output: 20, Inout: 0
+Module: DW01_add_width19, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width19, Ports: 59, Input: 39, Output: 20, Inout: 0
+Module: DW01_add_width19, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width21, Ports: 65, Input: 43, Output: 22, Inout: 0
+Module: DW01_add_width21, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width21, Ports: 65, Input: 43, Output: 22, Inout: 0
+Module: DW01_add_width21, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width22, Ports: 68, Input: 45, Output: 23, Inout: 0
+Module: DW01_add_width22, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width22, Ports: 68, Input: 45, Output: 23, Inout: 0
+Module: DW01_add_width22, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width23, Ports: 71, Input: 47, Output: 24, Inout: 0
+Module: DW01_add_width23, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width23, Ports: 71, Input: 47, Output: 24, Inout: 0
+Module: DW01_add_width23, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width24, Ports: 74, Input: 49, Output: 25, Inout: 0
+Module: DW01_add_width24, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width24, Ports: 74, Input: 49, Output: 25, Inout: 0
+Module: DW01_add_width24, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW02_mult_A_width24_B_width1, Ports: 51, Input: 26, Output: 25, Inout: 0
+Module: DW02_mult_A_width24_B_width1, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width24_B_width1'
+Module: DW01_absval_width24, Ports: 48, Input: 24, Output: 24, Inout: 0
+Module: DW01_absval_width24, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_absval_width24'
+Module: DW01_inc_width24, Ports: 48, Input: 24, Output: 24, Inout: 0
+Module: DW01_inc_width24, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width25, Ports: 50, Input: 25, Output: 25, Inout: 0
+Module: DW01_inc_width25, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width25, Ports: 77, Input: 51, Output: 26, Inout: 0
+Module: DW01_add_width25, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width25, Ports: 77, Input: 51, Output: 26, Inout: 0
+Module: DW01_add_width25, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width17, Ports: 53, Input: 35, Output: 18, Inout: 0
+Module: DW01_add_width17, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width17, Ports: 53, Input: 35, Output: 18, Inout: 0
+Module: DW01_add_width17, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW02_mult_A_width22_B_width1, Ports: 47, Input: 24, Output: 23, Inout: 0
+Module: DW02_mult_A_width22_B_width1, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width22_B_width1'
+Module: DW01_absval_width22, Ports: 44, Input: 22, Output: 22, Inout: 0
+Module: DW01_absval_width22, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_absval_width22'
+Module: DW01_inc_width22, Ports: 44, Input: 22, Output: 22, Inout: 0
+Module: DW01_inc_width22, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width23, Ports: 46, Input: 23, Output: 23, Inout: 0
+Module: DW01_inc_width23, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW02_mult_A_width8_B_width8, Ports: 33, Input: 17, Output: 16, Inout: 0
+Module: DW02_mult_A_width8_B_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width8_B_width8'
+Module: DW01_add_width14, Ports: 44, Input: 29, Output: 15, Inout: 0
+Module: DW01_add_width14, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width11, Ports: 35, Input: 23, Output: 12, Inout: 0
+Module: DW01_add_width11, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width11, Ports: 35, Input: 23, Output: 12, Inout: 0
+Module: DW01_add_width11, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width12, Ports: 38, Input: 25, Output: 13, Inout: 0
+Module: DW01_add_width12, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width12, Ports: 38, Input: 25, Output: 13, Inout: 0
+Module: DW01_add_width12, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width13, Ports: 41, Input: 27, Output: 14, Inout: 0
+Module: DW01_add_width13, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width13, Ports: 41, Input: 27, Output: 14, Inout: 0
+Module: DW01_add_width13, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW02_mult_A_width14_B_width14, Ports: 57, Input: 29, Output: 28, Inout: 0
+Module: DW02_mult_A_width14_B_width14, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width14_B_width14'
+Module: DW01_add_width26, Ports: 80, Input: 53, Output: 27, Inout: 0
+Module: DW01_add_width26, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width34, Ports: 104, Input: 69, Output: 35, Inout: 0
+Module: DW01_sub_width34, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width34, Ports: 104, Input: 69, Output: 35, Inout: 0
+Module: DW01_sub_width34, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width15, Ports: 47, Input: 31, Output: 16, Inout: 0
+Module: DW01_sub_width15, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width15, Ports: 47, Input: 31, Output: 16, Inout: 0
+Module: DW01_sub_width15, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width38, Ports: 116, Input: 77, Output: 39, Inout: 0
+Module: DW01_sub_width38, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width38, Ports: 116, Input: 77, Output: 39, Inout: 0
+Module: DW01_sub_width38, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width32, Ports: 98, Input: 65, Output: 33, Inout: 0
+Module: DW01_sub_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width32, Ports: 98, Input: 65, Output: 33, Inout: 0
+Module: DW01_sub_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width50, Ports: 152, Input: 101, Output: 51, Inout: 0
+Module: DW01_add_width50, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width50, Ports: 152, Input: 101, Output: 51, Inout: 0
+Module: DW01_add_width50, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW02_mult_A_width32_B_width17, Ports: 99, Input: 50, Output: 49, Inout: 0
+Module: DW02_mult_A_width32_B_width17, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width32_B_width17'
+Module: DW01_add_width47, Ports: 143, Input: 95, Output: 48, Inout: 0
+Module: DW01_add_width47, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width14, Ports: 44, Input: 29, Output: 15, Inout: 0
+Module: DW01_add_width14, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width14, Ports: 44, Input: 29, Output: 15, Inout: 0
+Module: DW01_add_width14, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width36, Ports: 110, Input: 73, Output: 37, Inout: 0
+Module: DW01_add_width36, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width36, Ports: 110, Input: 73, Output: 37, Inout: 0
+Module: DW01_add_width36, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width33, Ports: 73, Input: 67, Output: 6, Inout: 0
+Module: DW01_cmp6_width33, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW02_mult_A_width6_B_width1, Ports: 15, Input: 8, Output: 7, Inout: 0
+Module: DW02_mult_A_width6_B_width1, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width6_B_width1'
+Module: DW01_absval_width6, Ports: 12, Input: 6, Output: 6, Inout: 0
+Module: DW01_absval_width6, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_absval_width6'
+Module: DW01_inc_width7, Ports: 14, Input: 7, Output: 7, Inout: 0
+Module: DW01_inc_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width35, Ports: 107, Input: 71, Output: 36, Inout: 0
+Module: DW01_add_width35, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width35, Ports: 107, Input: 71, Output: 36, Inout: 0
+Module: DW01_add_width35, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW_rash_A_width25_SH_width6, Ports: 58, Input: 33, Output: 25, Inout: 0
+Module: DW_rash_A_width25_SH_width6, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width32_SH_width6, Ports: 72, Input: 40, Output: 32, Inout: 0
+Module: DW01_ash_A_width32_SH_width6, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_dec_width7, Ports: 14, Input: 7, Output: 7, Inout: 0
+Module: DW01_dec_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width32_SH_width32, Ports: 98, Input: 66, Output: 32, Inout: 0
+Module: DW01_ash_A_width32_SH_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_ash_A_width32_SH_width32'
+Module: DW01_NAND2, Ports: 3, Input: 2, Output: 1, Inout: 0
+Module: DW01_NAND2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_NOT, Ports: 2, Input: 1, Output: 1, Inout: 0
+Module: DW01_NOT, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width32_SH_width8, Ports: 74, Input: 42, Output: 32, Inout: 0
+Module: DW01_ash_A_width32_SH_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_ash_A_width32_SH_width8'
+Module: DW01_sub_width9, Ports: 29, Input: 19, Output: 10, Inout: 0
+Module: DW01_sub_width9, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width9, Ports: 29, Input: 19, Output: 10, Inout: 0
+Module: DW01_sub_width9, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width24, Ports: 74, Input: 49, Output: 25, Inout: 0
+Module: DW01_sub_width24, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width24, Ports: 74, Input: 49, Output: 25, Inout: 0
+Module: DW01_sub_width24, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width24, Ports: 52, Input: 50, Output: 2, Inout: 0
+Module: DW01_cmp2_width24, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width22, Ports: 48, Input: 46, Output: 2, Inout: 0
+Module: DW01_cmp2_width22, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width23, Ports: 50, Input: 48, Output: 2, Inout: 0
+Module: DW01_cmp2_width23, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width22, Ports: 68, Input: 45, Output: 23, Inout: 0
+Module: DW01_sub_width22, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width22, Ports: 68, Input: 45, Output: 23, Inout: 0
+Module: DW01_sub_width22, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width23, Ports: 53, Input: 47, Output: 6, Inout: 0
+Module: DW01_cmp6_width23, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW_rash_A_width34_SH_width7, Ports: 77, Input: 43, Output: 34, Inout: 0
+Module: DW_rash_A_width34_SH_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width36_SH_width7, Ports: 81, Input: 45, Output: 36, Inout: 0
+Module: DW01_ash_A_width36_SH_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_dec_width8, Ports: 16, Input: 8, Output: 8, Inout: 0
+Module: DW01_dec_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width36_SH_width32, Ports: 106, Input: 70, Output: 36, Inout: 0
+Module: DW01_ash_A_width36_SH_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_ash_A_width36_SH_width32'
+Module: DW01_cmp2_width36, Ports: 76, Input: 74, Output: 2, Inout: 0
+Module: DW01_cmp2_width36, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width36, Ports: 79, Input: 73, Output: 6, Inout: 0
+Module: DW01_cmp6_width36, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width16, Ports: 50, Input: 33, Output: 17, Inout: 0
+Module: DW01_add_width16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width16, Ports: 50, Input: 33, Output: 17, Inout: 0
+Module: DW01_add_width16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW_rash_A_width16_SH_width6, Ports: 40, Input: 24, Output: 16, Inout: 0
+Module: DW_rash_A_width16_SH_width6, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width36_SH_width6, Ports: 80, Input: 44, Output: 36, Inout: 0
+Module: DW01_ash_A_width36_SH_width6, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width36_SH_width8, Ports: 82, Input: 46, Output: 36, Inout: 0
+Module: DW01_ash_A_width36_SH_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_ash_A_width36_SH_width8'
+Module: DW01_cmp2_width20, Ports: 44, Input: 42, Output: 2, Inout: 0
+Module: DW01_cmp2_width20, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width18, Ports: 56, Input: 37, Output: 19, Inout: 0
+Module: DW01_sub_width18, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width18, Ports: 56, Input: 37, Output: 19, Inout: 0
+Module: DW01_sub_width18, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width39_SH_width6, Ports: 86, Input: 47, Output: 39, Inout: 0
+Module: DW01_ash_A_width39_SH_width6, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width39_SH_width32, Ports: 112, Input: 73, Output: 39, Inout: 0
+Module: DW01_ash_A_width39_SH_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_ash_A_width39_SH_width32'
+Module: DW01_cmp2_width39, Ports: 82, Input: 80, Output: 2, Inout: 0
+Module: DW01_cmp2_width39, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width39, Ports: 85, Input: 79, Output: 6, Inout: 0
+Module: DW01_cmp6_width39, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width39, Ports: 119, Input: 79, Output: 40, Inout: 0
+Module: DW01_add_width39, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width39, Ports: 119, Input: 79, Output: 40, Inout: 0
+Module: DW01_add_width39, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width39_SH_width8, Ports: 88, Input: 49, Output: 39, Inout: 0
+Module: DW01_ash_A_width39_SH_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_ash_A_width39_SH_width8'
+Module: DW01_cmp2_width25, Ports: 54, Input: 52, Output: 2, Inout: 0
+Module: DW01_cmp2_width25, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width25, Ports: 57, Input: 51, Output: 6, Inout: 0
+Module: DW01_cmp6_width25, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width31, Ports: 95, Input: 63, Output: 32, Inout: 0
+Module: DW01_add_width31, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width31, Ports: 95, Input: 63, Output: 32, Inout: 0
+Module: DW01_add_width31, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW_rash_A_width49_SH_width7, Ports: 107, Input: 58, Output: 49, Inout: 0
+Module: DW_rash_A_width49_SH_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width51_SH_width7, Ports: 111, Input: 60, Output: 51, Inout: 0
+Module: DW01_ash_A_width51_SH_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width51_SH_width32, Ports: 136, Input: 85, Output: 51, Inout: 0
+Module: DW01_ash_A_width51_SH_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_ash_A_width51_SH_width32'
+Module: DW01_cmp2_width51, Ports: 106, Input: 104, Output: 2, Inout: 0
+Module: DW01_cmp2_width51, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width51, Ports: 109, Input: 103, Output: 6, Inout: 0
+Module: DW01_cmp6_width51, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width49, Ports: 149, Input: 99, Output: 50, Inout: 0
+Module: DW01_add_width49, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width49, Ports: 149, Input: 99, Output: 50, Inout: 0
+Module: DW01_add_width49, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width50, Ports: 104, Input: 102, Output: 2, Inout: 0
+Module: DW01_cmp2_width50, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW_rash_A_width8_SH_width5, Ports: 23, Input: 15, Output: 8, Inout: 0
+Module: DW_rash_A_width8_SH_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width16_SH_width5, Ports: 39, Input: 23, Output: 16, Inout: 0
+Module: DW01_ash_A_width16_SH_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_dec_width6, Ports: 12, Input: 6, Output: 6, Inout: 0
+Module: DW01_dec_width6, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width16_SH_width32, Ports: 66, Input: 50, Output: 16, Inout: 0
+Module: DW01_ash_A_width16_SH_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_ash_A_width16_SH_width32'
+Module: DW01_ash_A_width16_SH_width8, Ports: 42, Input: 26, Output: 16, Inout: 0
+Module: DW01_ash_A_width16_SH_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_ash_A_width16_SH_width8'
+Module: DW_rash_A_width9_SH_width5, Ports: 25, Input: 16, Output: 9, Inout: 0
+Module: DW_rash_A_width9_SH_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width24_SH_width5, Ports: 55, Input: 31, Output: 24, Inout: 0
+Module: DW01_ash_A_width24_SH_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width24_SH_width32, Ports: 82, Input: 58, Output: 24, Inout: 0
+Module: DW01_ash_A_width24_SH_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_ash_A_width24_SH_width32'
+Module: DW01_cmp6_width24, Ports: 55, Input: 49, Output: 6, Inout: 0
+Module: DW01_cmp6_width24, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width24_SH_width8, Ports: 58, Input: 34, Output: 24, Inout: 0
+Module: DW01_ash_A_width24_SH_width8, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW01_ash_A_width24_SH_width8'
+Module: DW_rash_A_width14_SH_width5, Ports: 35, Input: 21, Output: 14, Inout: 0
+Module: DW_rash_A_width14_SH_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width17, Ports: 38, Input: 36, Output: 2, Inout: 0
+Module: DW01_cmp2_width17, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Information: Updating design information... (UID-85)
+Warning: Design 'kse_e203_soc_top' contains 116 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Information: Timing loop detected. (OPT-150)
+	<instance list omitted>
+Warning: Disabling timing arc between pins 'B' and 'Z' on cell '<omitted>'
+         to break a timing loop. (OPT-314)
+ 
+****************************************
+Report : path_group
+Design : kse_e203_soc_top
+Version: X-2025.06-SP4
+Date   : Fri Nov 13 14:36:03 2026
+****************************************
+
+                        Critical
+Group Name    Weight    Range
+--------------------------------------------------------------------------------
+**default**   1.00      0.00                 
+accel         5.00      1.00                 
+core          1.00      0.00                 
+e203          1.00      1.00                 
+jtag          1.00      0.00                 
+slow          1.00      0.00                 
+
+(path-group endpoint lists omitted in open release)

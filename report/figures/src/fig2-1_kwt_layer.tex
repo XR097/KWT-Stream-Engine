@@ -1,0 +1,56 @@
+% 图 2-1 KWT-1 单层 PostNorm 编码器数据流（T=99, D=64, MLP 256, 单头）
+\documentclass[border=4pt]{standalone}
+\input{common.tex}
+\begin{document}
+\begin{tikzpicture}[
+  mm/.style={blk, minimum width=1.75cm, minimum height=9mm, font=\footnotesize},
+  nl/.style={blkO, minimum width=1.75cm, minimum height=9mm, font=\footnotesize},
+  ad/.style={circle, draw=cGray, fill=cGrayL, line width=0.6pt, inner sep=0.5pt, minimum size=5mm, font=\footnotesize},
+  io/.style={blkW, minimum width=1.3cm, minimum height=9mm, font=\footnotesize},
+  sh/.style={font=\scriptsize, text=cGray, inner sep=1pt, fill=white},
+  e/.style={->, draw=cInk, line width=0.6pt},
+]
+% ---- 第一行：注意力 ----
+\node[io] (x) at (0,0) {输入 $X$};
+\node[mm, right=11mm of x] (qkv) {Q/K/V 投影\\\scriptsize W4，3 个 64×64};
+\node[mm, right=11mm of qkv] (sc) {$S=QK^{\mathsf T}/8$\\\scriptsize 激活×激活};
+\node[nl, right=11mm of sc] (sm) {Softmax\\\scriptsize Q15 指数表，P7};
+\node[mm, right=11mm of sm] (pv) {$P\cdot V$\\\scriptsize u8×s8};
+\node[mm, right=11mm of pv] (pj) {输出投影\\\scriptsize W4，64×64};
+\draw[e] (x) -- node[sh, above=1pt] {99×64} (qkv);
+\draw[e] (qkv) -- node[sh, above=1pt] {$Q,K$} (sc);
+\draw[e] (sc) -- node[sh, above=1pt] {99×99} (sm);
+\draw[e] (sm) -- node[sh, above=1pt] {99×99} (pv);
+\draw[e] (pv) -- node[sh, above=1pt] {99×64} (pj);
+\draw[e] (qkv.south) -- ++(0,-0.45) -| node[sh, pos=0.25, below=1pt] {$V$：99×64} (pv.south);
+% ---- 第二行：残差、LN、MLP ----
+\node[ad, below=1.55cm of pj] (r1) {$+$};
+\node[nl, left=8mm of r1] (ln1) {LayerNorm 1\\\scriptsize Q12 归一化与 $\gamma$};
+\node[mm, left=11mm of ln1] (fc1) {FC1\\\scriptsize W4，64×256};
+\node[nl, left=11mm of fc1] (gelu) {GELU\\\scriptsize 中段查表};
+\node[mm, left=11mm of gelu] (fc2) {FC2\\\scriptsize W4，256×64};
+\node[ad, left=8mm of fc2] (r2) {$+$};
+\node[nl, below=8mm of r2] (ln2) {LayerNorm 2\\\scriptsize Q12 归一化与 $\gamma$};
+\node[io, right=11mm of ln2] (y) {输出\\\scriptsize 下一层输入};
+\draw[e] (pj) -- node[sh, right=1pt] {99×64} (r1);
+\draw[e] (r1) -- (ln1);
+\draw[e] (ln1) -- node[sh, above=1pt] {99×64} (fc1);
+\draw[e] (fc1) -- node[sh, above=1pt] {99×256} (gelu);
+\draw[e] (gelu) -- node[sh, above=1pt] {99×256} (fc2);
+\draw[e] (fc2) -- node[sh, above=1pt] {99×64} (r2);
+\draw[e] (r2) -- (ln2);
+\draw[e] (ln2) -- node[sh, above=1pt] {99×64} (y);
+% 残差旁路
+\draw[e, draw=cGray, dashed] (x.north) -- ++(0,0.55) -| ($(pj.east)+(0.5,0)$) |- (r1.east);
+\node[sh, anchor=south] at ($(x.north)+(4.5,0.55)$) {残差（int8 宽整数相加）};
+\draw[e, draw=cGray, dashed] ($(ln1.north)+(-0.3,0)$) -- ++(0,0.3) -| (r2.north);
+% ---- 图例（放在 LN2 右侧空白处） ----
+\node[mm, minimum width=6mm, minimum height=3.5mm, anchor=west] (lg1) at ($(y.east)+(1.0,0.45)$) {};
+\node[anchor=west, font=\scriptsize, inner sep=1pt] at (lg1.east) {\,矩阵乘：A8 输入，int 累加（$\le$24 位），加 bias、RNE 移位、饱和回 A8};
+\node[nl, minimum width=6mm, minimum height=3.5mm, below=1.6mm of lg1] (lg2) {};
+\node[anchor=west, font=\scriptsize, inner sep=1pt] at (lg2.east) {\,整数非线性单元（查表 / 整数除法 / 整数开方）};
+\node[ad, minimum size=3.5mm, below=1.6mm of lg2] (lg3) {};
+\node[anchor=west, font=\scriptsize, inner sep=1pt] at ($(lg3.east)+(0.12,0)$) {残差相加后饱和；虚线为残差旁路};
+\node[font=\scriptsize, text=cGray, anchor=north west, inner sep=1pt] at ($(lg3.south west)+(0,-0.15)$) {T=99，D=64，MLP 256，单头；激活为 A8（int8），$P$ 为 u8；权重为 W4（逐通道 2 的幂尺度）};
+\end{tikzpicture}
+\end{document}

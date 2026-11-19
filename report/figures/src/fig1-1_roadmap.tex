@@ -1,0 +1,17 @@
+% 图 1-1 设计路线总览
+\documentclass[border=4pt]{standalone}
+\input{common.tex}
+\begin{document}
+\begin{tikzpicture}[node distance=9mm and 9mm]
+\node[blkG, minimum width=3.4cm, minimum height=3.0cm] (base) {\textbf{KWT-1 数值底座}\\[2pt]\footnotesize W4A8，2 的幂尺度\\\footnotesize 24 位累加\\\footnotesize 整数 Softmax / LN / GELU\\\footnotesize 软件模型与 golden\\[1pt]\footnotesize\color{cGray}（第 2 章）};
+\node[blkO, right=of base, minimum width=3.8cm, minimum height=3.0cm] (kse) {\textbf{KSE 固定功能引擎}\\[2pt]\footnotesize 1024 MAC，驻留 + 流式\\\footnotesize 两段式注意力\\\footnotesize 专用非线性单元\\\footnotesize 边载边算与调度重叠\\[1pt]\footnotesize\color{cGray}（第 3 章）};
+\node[blk, right=of kse, minimum width=3.2cm, minimum height=3.0cm] (soc) {\textbf{SoC 集成与验证}\\[2pt]\footnotesize E203 + 512 KB 共享 SRAM\\\footnotesize 单口 System Bus 与门铃\\\footnotesize 12/12 任务逐位一致\\[1pt]\footnotesize\color{cGray}（第 4 章）};
+\node[blkP, right=of soc, minimum width=3.3cm, minimum height=3.0cm] (ppa) {\textbf{综合与 PPA}\\[2pt]\footnotesize 150 MHz，SMIC 40 nm\\\footnotesize 163,328 周期 / 任务\\\footnotesize 1.236967 mm²\\\footnotesize 134.377696 µJ / 任务\\[1pt]\footnotesize\color{cGray}（第 5 章）};
+\draw[ar] (base) -- (kse);
+\draw[ar] (kse) -- (soc);
+\draw[ar] (soc) -- (ppa);
+\node[lbl, below=4mm of kse.south] {本作品的设计};
+\node[lbl, below=4mm of soc.south] {逐位对拍与整机回归};
+\node[lbl, below=4mm of ppa.south] {同一冻结配置};
+\end{tikzpicture}
+\end{document}

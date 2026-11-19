@@ -1,0 +1,311 @@
+                         Chronologic VCS (TM)
+       Version X-2025.06-SP1_Full64 -- Fri Nov 13 13:57:07 2026
+
+                    Copyright (c) 1991 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_dffs.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_bufs.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_icbs.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_xchecker.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/rtl/kse_soc/kse_sram_ctrl.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/rtl/kse_soc/kse_shared_sram.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/rtl/kse_soc/kse_sys_bus.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/kse_sram_sys_wrap.sv'
+Parsing design file '<PDK>
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/kse_param_loader.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_shared_sram.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_sram_priority.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_sram_restart.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_sram_prio_contract.sv'
+Top Level Modules:
+       tb_shared_sram
+TimeScale is 1 ns / 1 ps
+
+Warning-[TFIPC] Too few instance port connections
+<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/kse_sram_sys_wrap.sv, 90
+kse_sram_sys_wrap, "kse_shared_sram u_shram( .clk (clk),  .rst_n (rst_n),  .cmd_valid (s_cmd_valid),  .cmd_ready (s_cmd_ready),  .cmd_addr (s_cmd_addr),  .cmd_read (s_cmd_read),  .cmd_wdata (s_cmd_wdata),  .cmd_wmask (s_cmd_wmask),  .rsp_valid (s_rsp_valid),  .rsp_ready (s_rsp_ready),  .rsp_rdata (s_rsp_rdata),  .rsp_err (s_rsp_err),  .loader_wptr (loader_wptr),  .loader_base (loader_base),  .loader_wptr_valid (loader_wptr_valid),  .wptr_rd_valid (wptr_rd_valid),  .wptr_rd_ready (wptr_rd_ready),  .wptr_rd_rdata (wptr_rd_rdata));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+Starting vcs inline pass...
+4 modules and 0 UDP read.
+recompiling module sirv_gnrl_xchecker
+recompiling module RAMSP4096X16
+recompiling module tb_shared_sram
+recompiling module kse_rand_master
+All of 4 modules done
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../main ]; then chmod a-x ../main; fi
+g++  -o ../main      -rdynamic  -Wl,-rpath='$ORIGIN'/main.daidir -Wl,-rpath=./main.daidir -Wl,-rpath=/eda/synopsys/vcs/X-2025.06-SP1/linux64/lib -L/eda/synopsys/vcs/X-2025.06-SP1/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o  _287867_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs      -lvcsnew -ldistsimclient -lsimprofile -luclinative /eda/synopsys/vcs/X-2025.06-SP1/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /eda/synopsys/vcs/X-2025.06-SP1/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../main up to date
+CPU time: .860 seconds to compile + .525 seconds to elab + .511 seconds to link
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Notice: timing checks disabled with +notimingcheck at compile-time
+Chronologic VCS simulator copyright 1991-2025
+Contains Synopsys proprietary information.
+Compiler version X-2025.06-SP1_Full64; Runtime version X-2025.06-SP1_Full64;  Nov 13 13:57 2026
+[TB] wrote 65536-word parameter image to kse_sram_img.hex
+[LOADER] image loaded from kse_sram_img.hex
+
+================ streaming phase statistics ================
+[STAT] loader : 65536 words, cycles 65542..194756 (129215), 0.507 word/cycle, 64386 stalls
+[STAT] DMA    : 65536 words, cycles 66569..196809 (130241), 0.503 word/cycle, 0 stalls
+[STAT] steady window is [loader_first+8192, loader_first+61440): 53248 cycles, loader 0.499, DMA 0.500 word/cycle
+[STAT] memory init (CPU zero-fill upper 256 KB): 65538 cycles
+[STAT] loader+DMA command in the same cycle: 0
+[STAT] bank demand-conflict cycles: 90897 (loader/DMA 64323, CPU/loader 48717, CPU/DMA 24109)
+[STAT] arbitration stalls: loader 64386, DMA 0, CPU 126942 (600 CPU transactions)
+[STAT] total cycles: 231894
+============================================================
+
+================== backpressure phase =====================
+[STAT] 3 x 4000 random commands, rsp_ready randomly low 35% of pending beats
+[STAT] backpressure beats: rm0 2251, rm1 2161, rm2 2253
+[STAT] phase2 timing: random 18669 cycles, sweep 131077 cycles (131072 words)
+[STAT] random master 0 (with sweep): 0 errors
+[STAT] random master 1            : 0 errors
+[STAT] random master 2            : 0 errors
+[STAT] CPU read errors 0, DMA errors 0, loader errors 0
+[STAT] loader_wptr = 0x00040000 (expect 0x00040000), MMIO read = 0x00040000
+============================================================
+
+TEST PASSED
+$finish called from file "<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_shared_sram.sv", line 772.
+$finish at simulation time           3816535000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 3816535000 ps
+CPU Time:      1.810 seconds;       Data structure size:   2.1Mb
+Fri Nov 13 13:57:11 2026
+PASS: tb_shared_sram
+                         Chronologic VCS (TM)
+       Version X-2025.06-SP1_Full64 -- Fri Nov 13 13:57:13 2026
+
+                    Copyright (c) 1991 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_dffs.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_bufs.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_icbs.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_xchecker.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/rtl/kse_soc/kse_sram_ctrl.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/rtl/kse_soc/kse_shared_sram.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/rtl/kse_soc/kse_sys_bus.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/kse_sram_sys_wrap.sv'
+Parsing design file '<PDK>
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/kse_param_loader.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_shared_sram.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_sram_priority.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_sram_restart.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_sram_prio_contract.sv'
+Top Level Modules:
+       tb_sram_priority
+TimeScale is 1 ns / 1 ps
+
+Warning-[TFIPC] Too few instance port connections
+<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/kse_sram_sys_wrap.sv, 90
+kse_sram_sys_wrap, "kse_shared_sram u_shram( .clk (clk),  .rst_n (rst_n),  .cmd_valid (s_cmd_valid),  .cmd_ready (s_cmd_ready),  .cmd_addr (s_cmd_addr),  .cmd_read (s_cmd_read),  .cmd_wdata (s_cmd_wdata),  .cmd_wmask (s_cmd_wmask),  .rsp_valid (s_rsp_valid),  .rsp_ready (s_rsp_ready),  .rsp_rdata (s_rsp_rdata),  .rsp_err (s_rsp_err),  .loader_wptr (loader_wptr),  .loader_base (loader_base),  .loader_wptr_valid (loader_wptr_valid),  .wptr_rd_valid (wptr_rd_valid),  .wptr_rd_ready (wptr_rd_ready),  .wptr_rd_rdata (wptr_rd_rdata));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+Starting vcs inline pass...
+3 modules and 0 UDP read.
+recompiling module sirv_gnrl_xchecker
+recompiling module RAMSP4096X16
+recompiling module tb_sram_priority
+All of 3 modules done
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../prio ]; then chmod a-x ../prio; fi
+g++  -o ../prio      -rdynamic  -Wl,-rpath='$ORIGIN'/prio.daidir -Wl,-rpath=./prio.daidir -Wl,-rpath=/eda/synopsys/vcs/X-2025.06-SP1/linux64/lib -L/eda/synopsys/vcs/X-2025.06-SP1/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o  _288621_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs      -lvcsnew -ldistsimclient -lsimprofile -luclinative /eda/synopsys/vcs/X-2025.06-SP1/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /eda/synopsys/vcs/X-2025.06-SP1/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../prio up to date
+CPU time: .798 seconds to compile + .535 seconds to elab + .515 seconds to link
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Notice: timing checks disabled with +notimingcheck at compile-time
+Chronologic VCS simulator copyright 1991-2025
+Contains Synopsys proprietary information.
+Compiler version X-2025.06-SP1_Full64; Runtime version X-2025.06-SP1_Full64;  Nov 13 13:57 2026
+[PRIO] P0 (DMA+loader+CPU): accepts DMA 1000, loader 0, CPU 0 (expect 1000/0/0)
+[PRIO] P1 (loader+CPU)    : accepts DMA 0, loader 1000, CPU 0 (expect 0/1000/0)
+[PRIO] P2 (CPU only)      : accepts DMA 0, loader 0, CPU 1000 (expect 0/0/1000)
+[PRIO] STALL phase        : accepts DMA 11, loader 0, CPU 0 (loader/CPU must be 0 while stalled)
+[PRIO] totals             : accepts 1000/1000/1011, responses 1000/1000/1011
+TEST PASSED
+$finish called from file "<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_sram_priority.sv", line 242.
+$finish at simulation time             30935000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 30935000 ps
+CPU Time:      0.210 seconds;       Data structure size:   1.1Mb
+Fri Nov 13 13:57:16 2026
+PASS: tb_sram_priority
+                         Chronologic VCS (TM)
+       Version X-2025.06-SP1_Full64 -- Fri Nov 13 13:57:19 2026
+
+                    Copyright (c) 1991 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_dffs.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_bufs.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_icbs.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_xchecker.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/rtl/kse_soc/kse_sram_ctrl.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/rtl/kse_soc/kse_shared_sram.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/rtl/kse_soc/kse_sys_bus.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/kse_sram_sys_wrap.sv'
+Parsing design file '<PDK>
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/kse_param_loader.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_shared_sram.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_sram_priority.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_sram_restart.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_sram_prio_contract.sv'
+Top Level Modules:
+       tb_sram_restart
+TimeScale is 1 ns / 1 ps
+
+Warning-[TFIPC] Too few instance port connections
+<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/kse_sram_sys_wrap.sv, 90
+kse_sram_sys_wrap, "kse_shared_sram u_shram( .clk (clk),  .rst_n (rst_n),  .cmd_valid (s_cmd_valid),  .cmd_ready (s_cmd_ready),  .cmd_addr (s_cmd_addr),  .cmd_read (s_cmd_read),  .cmd_wdata (s_cmd_wdata),  .cmd_wmask (s_cmd_wmask),  .rsp_valid (s_rsp_valid),  .rsp_ready (s_rsp_ready),  .rsp_rdata (s_rsp_rdata),  .rsp_err (s_rsp_err),  .loader_wptr (loader_wptr),  .loader_base (loader_base),  .loader_wptr_valid (loader_wptr_valid),  .wptr_rd_valid (wptr_rd_valid),  .wptr_rd_ready (wptr_rd_ready),  .wptr_rd_rdata (wptr_rd_rdata));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+Starting vcs inline pass...
+3 modules and 0 UDP read.
+recompiling module sirv_gnrl_xchecker
+recompiling module RAMSP4096X16
+recompiling module tb_sram_restart
+All of 3 modules done
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../restart ]; then chmod a-x ../restart; fi
+g++  -o ../restart      -rdynamic  -Wl,-rpath='$ORIGIN'/restart.daidir -Wl,-rpath=./restart.daidir -Wl,-rpath=/eda/synopsys/vcs/X-2025.06-SP1/linux64/lib -L/eda/synopsys/vcs/X-2025.06-SP1/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o  _289340_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs      -lvcsnew -ldistsimclient -lsimprofile -luclinative /eda/synopsys/vcs/X-2025.06-SP1/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /eda/synopsys/vcs/X-2025.06-SP1/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../restart up to date
+CPU time: .819 seconds to compile + .524 seconds to elab + .505 seconds to link
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Notice: timing checks disabled with +notimingcheck at compile-time
+Chronologic VCS simulator copyright 1991-2025
+Contains Synopsys proprietary information.
+Compiler version X-2025.06-SP1_Full64; Runtime version X-2025.06-SP1_Full64;  Nov 13 13:57 2026
+[LOADER] image loaded from kse_sram_restart_img.hex
+TEST PASSED
+$finish called from file "<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_sram_restart.sv", line 526.
+$finish at simulation time             73985000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 73985000 ps
+CPU Time:      0.240 seconds;       Data structure size:   1.1Mb
+Fri Nov 13 13:57:21 2026
+PASS: tb_sram_restart
+                         Chronologic VCS (TM)
+       Version X-2025.06-SP1_Full64 -- Fri Nov 13 13:57:24 2026
+
+                    Copyright (c) 1991 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_dffs.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_bufs.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_icbs.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/third-party/e203/rtl/e203/general/sirv_gnrl_xchecker.v'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/rtl/kse_soc/kse_sram_ctrl.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/rtl/kse_soc/kse_shared_sram.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/rtl/kse_soc/kse_sys_bus.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/kse_sram_sys_wrap.sv'
+Parsing design file '<PDK>
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/kse_param_loader.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_shared_sram.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_sram_priority.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_sram_restart.sv'
+Parsing design file '<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_sram_prio_contract.sv'
+Top Level Modules:
+       tb_sram_prio_contract
+TimeScale is 1 ns / 1 ps
+
+Warning-[TFIPC] Too few instance port connections
+<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/kse_sram_sys_wrap.sv, 90
+kse_sram_sys_wrap, "kse_shared_sram u_shram( .clk (clk),  .rst_n (rst_n),  .cmd_valid (s_cmd_valid),  .cmd_ready (s_cmd_ready),  .cmd_addr (s_cmd_addr),  .cmd_read (s_cmd_read),  .cmd_wdata (s_cmd_wdata),  .cmd_wmask (s_cmd_wmask),  .rsp_valid (s_rsp_valid),  .rsp_ready (s_rsp_ready),  .rsp_rdata (s_rsp_rdata),  .rsp_err (s_rsp_err),  .loader_wptr (loader_wptr),  .loader_base (loader_base),  .loader_wptr_valid (loader_wptr_valid),  .wptr_rd_valid (wptr_rd_valid),  .wptr_rd_ready (wptr_rd_ready),  .wptr_rd_rdata (wptr_rd_rdata));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+Starting vcs inline pass...
+3 modules and 0 UDP read.
+recompiling module sirv_gnrl_xchecker
+recompiling module RAMSP4096X16
+recompiling module tb_sram_prio_contract
+All of 3 modules done
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../contract ]; then chmod a-x ../contract; fi
+g++  -o ../contract      -rdynamic  -Wl,-rpath='$ORIGIN'/contract.daidir -Wl,-rpath=./contract.daidir -Wl,-rpath=/eda/synopsys/vcs/X-2025.06-SP1/linux64/lib -L/eda/synopsys/vcs/X-2025.06-SP1/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o  _290091_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs      -lvcsnew -ldistsimclient -lsimprofile -luclinative /eda/synopsys/vcs/X-2025.06-SP1/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /eda/synopsys/vcs/X-2025.06-SP1/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../contract up to date
+CPU time: .815 seconds to compile + .494 seconds to elab + .496 seconds to link
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Notice: timing checks disabled with +notimingcheck at compile-time
+Chronologic VCS simulator copyright 1991-2025
+Contains Synopsys proprietary information.
+Compiler version X-2025.06-SP1_Full64; Runtime version X-2025.06-SP1_Full64;  Nov 13 13:57 2026
+[LOADER] image loaded from prio_img.hex
+STATS loader_span=25478 loader_wait_total=1354 loader_wait_max=126 dma_rule_wait=1036 dma_idle=553756 dma_rsp_backpressure=8542 cpu_reads=54156 cpu_writes=53805
+TEST PASSED
+$finish called from file "<WORK>/orca/workspaces/transformer_acc/feat-asic/tb/kse_soc/tb_sram_prio_contract.sv", line 163.
+$finish at simulation time           5887455000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 5887455000 ps
+CPU Time:      1.830 seconds;       Data structure size:   1.3Mb
+Fri Nov 13 13:57:28 2026
+PASS: tb_sram_prio_contract
+ALL SHARED-SRAM TESTS PASSED

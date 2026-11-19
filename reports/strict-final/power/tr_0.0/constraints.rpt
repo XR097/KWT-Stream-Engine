@@ -1,0 +1,25 @@
+****************************************
+Report : constraint
+	-all_violators
+	-path slack_only
+Design : kse_e203_soc_top
+Version: X-2025.06
+Date   : Fri Nov 13 16:14:45 2026
+****************************************
+
+
+
+
+
+
+
+
+   max_capacitance
+
+                             Required        Actual
+   Pin                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   <139 instance/pin entries omitted>
+
+
+1

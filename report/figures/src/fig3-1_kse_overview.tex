@@ -1,0 +1,63 @@
+% 图 3-1 KSE SoC 总体框图
+\documentclass[border=4pt]{standalone}
+\input{common.tex}
+\begin{document}
+\begin{tikzpicture}[
+  u/.style={blk, font=\footnotesize, minimum height=7mm, inner sep=2pt},
+  uo/.style={blkO, font=\footnotesize, minimum height=7mm, inner sep=2pt},
+  ug/.style={blkG, font=\footnotesize, minimum height=7mm, inner sep=2pt},
+  up/.style={blkP, font=\footnotesize, minimum height=7mm, inner sep=2pt},
+]
+% 左侧：平台
+\node[ug, minimum width=3.2cm, minimum height=1.3cm] (cpu) at (0,0) {\textbf{E203}\\逐层命令，WFI\\PLIC 中断唤醒};
+\node[ug, minimum width=3.2cm, minimum height=1.0cm] (ldr) at (0,-2.4) {\textbf{参数加载器}\\32 位 ICB 写入，门铃发布进度};
+\node[up, minimum width=3.2cm] (xbar) at (0,-4.3) {系统总线仲裁器\\\scriptsize DMA > 加载器 > CPU};
+\node[u, minimum width=2.0cm, minimum height=1.2cm] (b0) at (-0.6,-5.9) {SRAM 控制器\\\scriptsize 64 个 4K×16 宏};
+\node[up, minimum width=1.1cm, minimum height=1.2cm] (b1) at (1.05,-5.9) {进度\\寄存器};
+\node[lbl, below=1pt of b0.south east] {512 KB 共享 SRAM：单个 32 位从口，每拍 1 笔};
+\draw[ar] ($(cpu.south)+(-1.2,0)$) -- node[lbl, right, pos=0.12] {CPU} ($(xbar.north)+(-1.2,0)$);
+\draw[ar] (ldr.south) -- node[lbl, right] {写参数、写门铃} (xbar.north);
+\draw[<->, draw=cInk, line width=0.6pt] (b0.north) -- (b0.north |- xbar.south);
+\draw[<->, draw=cInk, line width=0.6pt] (b1.north) -- (b1.north |- xbar.south);
+% 包装层
+\node[uo, minimum width=2.4cm] (mmio) at (5.2,0.2) {MMIO 寄存器};
+\node[uo, minimum width=2.4cm] (cq) at (5.2,-0.85) {命令队列（2 项）};
+\node[uo, minimum width=2.4cm] (pq) at (5.2,-1.9) {参数段队列（4 项）};
+\node[uo, minimum width=2.4cm, minimum height=1.0cm] (dma) at (5.2,-3.3) {流式 DMA\\\scriptsize 32 位 ICB};
+\node[ttl, anchor=south] (wt) at (5.2,0.75) {\footnotesize KSE 包装层};
+\begin{scope}[on background layer]
+\node[draw=cOrange, line width=0.6pt, rounded corners=3pt, fit=(wt)(mmio)(dma), inner sep=5pt] (wrap) {};
+\end{scope}
+\draw[ar] (cpu.east) ++(0,0.2) -- node[lbl, above] {PPI MMIO} ($(mmio.west)$);
+\draw[ar, draw=cOrange] (mmio.west) ++(0,-0.2) -- ++(-0.35,0) |- node[lbl, pos=0.75, below, text=cOrange!80!black] {IRQ} ($(cpu.east)+(0,-0.3)$);
+\draw[ar] (mmio) -- (cq); \draw[ar] (cq) -- (pq); \draw[ar] (pq) -- (dma);
+\draw[<->, draw=cInk, line width=0.6pt] (dma.south) |- node[lbl, pos=0.7, below] {读输入/参数，写输出} ($(xbar.east)$);
+\draw[arD] (b1.east) -| node[lbl, pos=0.75, right] {放行上界} ($(dma.south)+(0.7,0)$);
+% 引擎：左列行存储与非线性单元，右列参数通路与阵列
+\node[u, minimum width=2.3cm, minimum height=1.4cm] (rsa) at (9.1,-0.6) {行存储 A\\\scriptsize 32 B × 1024 行};
+\node[u, minimum width=2.3cm, minimum height=1.4cm] (rsb) at (9.1,-2.6) {行存储 B\\\scriptsize 32 B × 1024 行};
+\node[uo, minimum width=1.1cm, inner sep=1pt] (smx) at (8.5,-4.2) {Softmax};
+\node[uo, minimum width=1.1cm, inner sep=1pt] (ln) at (9.75,-4.2) {LN};
+\node[u, minimum width=2.7cm] (pf) at (12.8,0.1) {参数预取 FIFO 2 KB};
+\node[u, minimum width=2.7cm] (ld) at (12.8,-0.85) {加载器 + 驻留槽};
+\node[u, minimum width=2.7cm, minimum height=1.2cm, draw=cBlue, fill=cBlueM!50] (mac) at (12.8,-2.2) {\textbf{32×32 MAC 阵列}\\\scriptsize 1024 个 s9×s8};
+\node[uo, minimum width=2.7cm] (post) at (12.8,-3.6) {后处理 + GELU ROM};
+\node[ug, minimum width=2.7cm] (seq) at (12.8,-4.6) {层定序器（硬连线）};
+\draw[ar] (pf) -- (ld); \draw[ar] (ld) -- (mac); \draw[ar] (mac) -- (post);
+\draw[ar] (rsa.east) -- (10.6,-0.6) |- node[lbl, pos=0.75, above] {读} ($(mac.west)+(0,0.3)$);
+\draw[ar] ($(rsb.east)+(0,0.2)$) -- node[lbl, above, pos=0.3] {读} ($(mac.west)+(0,-0.2)$);
+\draw[ar] (post.west) -- (11.0,-3.6) |- ($(rsb.east)+(0,-0.45)$);
+\node[lbl, anchor=north east] at (10.95,-3.35) {写回};
+\draw[<->, draw=cInk, line width=0.6pt] (smx.north) -- (smx.north |- rsb.south);
+\draw[<->, draw=cInk, line width=0.6pt] (ln.north) -- (ln.north |- rsb.south);
+\node[lbl, anchor=north] at (9.1,-4.6) {读写 A、B};
+\draw[<->, draw=cInk, line width=0.6pt] (dma.east) ++(0,-0.25) -- (7.2,-3.55) |- (rsa.west);
+\node[lbl, anchor=north west] at (6.62,-3.62) {激活};
+\draw[ar] (dma.east) ++(0,0.25) -- (6.85,-3.05) -- (6.85,1.05) -| node[lbl, pos=0.25, above] {参数流} (pf.north);
+\node[ttl, anchor=south east] (et) at (14.1,-5.45) {\footnotesize KSE 引擎（kse\_top）};
+\begin{scope}[on background layer]
+\node[draw=cBlue, line width=0.8pt, rounded corners=3pt, fit=(rsa)(pf)(seq)(smx)(et), inner sep=6pt] (eng) {};
+\end{scope}
+\draw[arD] (cq.east) -- (eng.west |- cq.east);
+\end{tikzpicture}
+\end{document}

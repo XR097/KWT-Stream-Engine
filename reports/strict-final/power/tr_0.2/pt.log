@@ -1,0 +1,391 @@
+
+                                 PrimeTime (R)
+
+                 Version X-2025.06 for linux64 - May 29, 2025 
+
+                    Copyright (c) 1988 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+# PrimePower (pt_shell) averaged power of the synthesized KSE SoC over the 12
+# scoring windows.  Libraries/corner as in syn_common.tcl (SMIC40LL RVT
+# tt_typical_max 1.10 V 25 C; RAMSP* tt 1.10 V 25 C Liberty incl. power).
+# Run from an output directory outside the repository:
+#   KSE_NETLIST=<kse_soc_mapped.v> KSE_SDC=<kse_soc_mapped.sdc> KSE_SAIF=<12-window SAIF>
+#   KSE_MAP=<kse_soc_saif_map.ptpx.tcl> [KSE_DEFAULT_TR=0.1] pt_shell -f power_soc.tcl > pt.log 2>&1
+# Unannotated start points (primary inputs, cells with no annotated/propagated
+# input activity) get power_default_toggle_rate (default 0.1 per clock cycle of the
+# fastest clock) and static probability 0.5.  Everything else is
+# SAIF-annotated or propagated through the netlist.
+set STD_DB    <PDK>
+<PDK>
+set RAM4K_DB  <PDK>
+<PDK>
+set RAM1K_DB  <PDK>
+<PDK>
+set RAM128_DB <PDK>
+<PDK>
+set power_enable_analysis true
+Information: Checked out license 'PrimePower' (PT-019)
+true
+set power_analysis_mode averaged
+averaged
+set search_path "."
+.
+set link_path [list * $STD_DB $RAM4K_DB $RAM1K_DB $RAM128_DB]
+* <PDK> <PDK> <PDK> <PDK>
+set DTR 0.1
+0.1
+if {[info exists env(KSE_DEFAULT_TR)]} { set DTR $env(KSE_DEFAULT_TR) }
+0.2
+set_app_var report_default_significant_digits 9
+9
+read_verilog $env(KSE_NETLIST)
+1
+current_design kse_e203_soc_top
+Information: current_design won't return any data before link (DES-071)
+redirect -variable lk { set ok [link_design] }
+puts $lk
+Loading db file '<PDK>
+Loading verilog file '<WORK>/asic-explore/strict_final/run/syn/kse_soc_mapped.v'
+Loading db file '<PDK>
+Loading db file '<PDK>
+Loading db file '<PDK>
+Linking design kse_e203_soc_top...
+Information: Removing 1361 unneeded designs..... (LNK-034)
+Information: 684 (66.60%) library cells are unused in library sc9mc_logic0040ll_base_rvt_c40_tt_typical_max_1p10v_25c..... (LNK-045)
+Information: total 684 library cells are unused (LNK-046)
+Warning: Some timing arcs have been disabled for breaking timing loops or because of constant propagation. Use the 'report_disable_timing' command to get the list of these disabled timing arcs. (PTE-003)
+Design 'kse_e203_soc_top' was successfully linked.
+Information: There are 585130 leaf cells, ports, hiers and 756783 nets in the design (LNK-047)
+1
+
+if {!$ok || [regexp {Unable to resolve|unresolved} $lk]} { puts "POWER_FAIL: link"; exit 1 }
+read_sdc $env(KSE_SDC)
+
+Reading SDC version 2.2...
+1
+1
+# Recreate valid leaf-only groups also for older synthesis checkpoints whose
+# group_path commands failed. Includes all PLIC endpoints conservatively.
+set MAIN <instance>
+<instance>
+set accel_eps [get_cells -hier -filter "is_hierarchical==false && (full_name=~${MAIN}/u_kse_sys/* || full_name=~${MAIN}/u_e203_subsys_plic/*) && (is_sequential==true || ref_name=~RAMSP*)"]
+{"<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance>
+set e203_eps [get_cells -hier -filter "is_hierarchical==false && full_name=~${MAIN}/u_e203_cpu_top/* && (is_sequential==true || ref_name=~RAMSP*)"]
+{"<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance>
+group_path -name accel -to $accel_eps
+1
+group_path -name e203 -to $e203_eps
+1
+update_timing -full
+Warning: Some timing arcs have been disabled for breaking timing loops or because of constant propagation. Use the 'report_disable_timing' command to get the list of these disabled timing arcs. (PTE-003)
+Information: Building multi voltage information for entire design. (MV-022)
+Information: Inferring 15 clock-gating checks. (PTE-017)
+1
+catch {redirect check_timing.rpt {check_timing -verbose}}
+0
+foreach g {accel e203 core slow jtag} {
+  if {[sizeof_collection [get_path_groups -quiet $g]]} {
+    redirect timing_setup_$g.rpt {report_timing -delay_type max -group $g -slack_lesser_than 1000000 -max_paths 5 -nosplit}
+    redirect timing_hold_$g.rpt {report_timing -delay_type min -group $g -slack_lesser_than 1000000 -max_paths 5 -nosplit}
+  }
+}
+set tf [open timing_metrics.tsv w]
+file42
+puts $tf "group\tlaunch_clock\tanalysis\tslack_ns\tstartpoint\tendpoint"
+foreach g {accel e203 core slow jtag} {
+  if {![sizeof_collection [get_path_groups -quiet $g]]} { continue }
+  foreach_in_collection c [all_clocks] {
+    foreach dt {max min} {
+      set ps [get_timing_paths -group $g -from $c -delay_type $dt -max_paths 1]
+      if {[sizeof_collection $ps]} {
+        puts $tf "$g\t[get_object_name $c]\t$dt\t[get_attribute $ps slack]\t[get_object_name [get_attribute $ps startpoint]]\t[get_object_name [get_attribute $ps endpoint]]"
+      }
+    }
+  }
+}
+# Also check paths launched inside the accelerator toward platform endpoints.
+# Endpoint-only groups alone would omit these outbound interface paths.
+set accel_launch_pins [filter_collection [all_registers -clock_pins] "full_name=~${MAIN}/u_kse_sys/* || full_name=~${MAIN}/u_e203_subsys_plic/*"]
+{"<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance>
+foreach dt {max min} {
+  set ps [get_timing_paths -from $accel_launch_pins -delay_type $dt -max_paths 1]
+  if {[sizeof_collection $ps]} {
+    puts $tf "accel_launch_any\tany\t$dt\t[get_attribute $ps slack]\t[get_object_name [get_attribute $ps startpoint]]\t[get_object_name [get_attribute $ps endpoint]]"
+  }
+  redirect timing_accel_launch_$dt.rpt {report_timing -from $accel_launch_pins -delay_type $dt -slack_lesser_than 1000000 -max_paths 5 -nosplit}
+}
+Warning: There are 208 invalid start points. (UITE-416)
+Warning: There are 208 invalid start points. (UITE-416)
+close $tf
+catch {redirect global_timing.rpt {report_global_timing}}
+0
+catch {redirect constraints.rpt {report_constraint -all_violators -nosplit}}
+0
+set power_default_toggle_rate $DTR
+0.2
+set power_default_toggle_rate_reference_clock fastest
+fastest
+set power_default_static_probability 0.5
+0.5
+source $env(KSE_MAP)
+Warning: The gate object corerst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object hfclkrst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object corerst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object hfclkrst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object cpu_cmd_valid_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object jtag_TRST_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object io_rsts_corerst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object io_rsts_hfclkrst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object io_rsts_corerst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object o5_icb_cmd_valid_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object cpu_cmd_valid_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object io_moff_hfclkrst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object io_moff_corerst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object io_sync_reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object io_sync_reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object o_bus_icb_cmd_valid[3]_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object i_bus_icb_cmd_valid[2]_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object io_control_hfclkrst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object io_control_corerst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object io_resetCauses_erst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object io_corerst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object reset_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object agu_sbf_1_ena_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+Warning: The gate object rst_BAR is already mapped to an RTL object. (PWR-019)
+1
+1
+redirect saif_read.log { read_saif -strip_path tb_kse_soc/u_soc $env(KSE_SAIF) }
+redirect switching_summary.rpt { report_switching_activity }
+redirect switching_default.rpt { report_switching_activity -list_by_source default -show_pin }
+update_power
+Warning: The hierarchical cell '<instance> is an empty cell (PWR-278)
+Warning: The hierarchical cell '<instance> is an empty cell (PWR-278)
+Warning: The hierarchical cell '<instance> is an empty cell (PWR-278)
+Warning: The hierarchical cell '<instance> is an empty cell (PWR-278)
+Warning: The hierarchical cell '<instance> is an empty cell (PWR-278)
+Warning: The hierarchical cell '<instance> is an empty cell (PWR-278)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Information: Running switching activity propagation with 4 threads!
+Information: Running averaged power analysis... (PWR-601)
+Information: Running power calculation with 4 threads. (PWR-602)
+1
+redirect switching_after_update.rpt { report_switching_activity }
+redirect power.rpt        { report_power -nosplit }
+redirect power_hier.rpt   { report_power -hierarchy -levels 4 -nosplit }
+catch {redirect power_macros.rpt { report_power -cell_power -nosplit [get_cells -hierarchical -filter "ref_name =~ RAMSP*"] }}
+0
+puts "POWER_MAIN total=[get_attribute [current_design] total_power]"
+POWER_MAIN total=0.1234059475745369
+# Each sensitivity point MUST use a fresh pt_shell: propagated activity can be
+# cached across update_power calls. run_power.sh runs 0.1, 0, 0.2 serially.
+set f [open power_components.tsv w]
+file42
+puts $f "component\tinternal_W\tswitching_W\tleakage_W\ttotal_W"
+proc power_row {f name obj} {
+  set vals [list $name]
+  foreach a {internal_power switching_power leakage_power total_power} {
+    lappend vals [get_attribute $obj $a]
+  }
+  puts $f [join $vals "\t"]
+}
+power_row $f soc [current_design]
+set MAIN <instance>
+<instance>
+foreach {name path} [list cpu $MAIN/u_e203_cpu_top engine $MAIN/u_kse_sys/u_eng/u_kse wrapper_and_engine $MAIN/u_kse_sys/u_eng shared $MAIN/u_kse_sys/u_shram] {
+  power_row $f $name [get_cells $path]
+}
+set macros [get_cells -hierarchical -filter "ref_name =~ RAMSP*"]
+{"<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance> "<instance>
+foreach_in_collection c $macros { power_row $f [get_object_name $c] $c }
+close $f
+# Additional read-only breakdown for fair-baseline attribution.
+set ef [open power_engine_hierarchy.tsv w]
+file42
+puts $ef "component\tinternal_W\tswitching_W\tleakage_W\ttotal_W"
+set ENG $MAIN/u_kse_sys/u_eng/u_kse
+<instance>
+foreach_in_collection c [get_cells -hierarchical -filter "is_hierarchical==true && full_name=~${ENG}/*"] {
+  power_row $ef [get_object_name $c] $c
+}
+close $ef
+# Exact pin-level provenance, including memory input pins (the overview's
+# Memory row counts only nets driven by memory outputs).
+set f [open macro_activity.tsv w]
+file42
+puts $f "pin\tdirection\ttoggle_per_ns\tsource"
+foreach_in_collection p [get_pins -of_objects $macros] {
+  set a [get_switching_activity -toggle_rate $p]
+  puts $f "[get_object_name $p]\t[get_attribute $p direction]\t[lindex [lindex $a 0] 1]\t[lindex [lindex $a 0] 2]"
+}
+close $f
+# Attribute the full power of cells touching default-source nets. This is
+# an explicitly defined cell subtotal, not causal attribution downstream.
+set default_cells [get_cells -quiet __no_such_cell__]
+foreach a [get_switching_activity -toggle_rate -include_only default [get_nets -hierarchical *]] {
+  set ns [get_nets -quiet [list [lindex $a 0]]]
+  if {[sizeof_collection $ns]} {
+    set ps [get_pins -quiet -of_objects $ns]
+    if {[sizeof_collection $ps]} {
+      set cs [filter_collection [get_cells -quiet -of_objects $ps] "is_hierarchical==false"]
+      set default_cells [add_to_collection -unique $default_cells $cs]
+    }
+  }
+}
+set f [open default_cells.tsv w]
+file42
+puts $f "cell\tinternal_W\tswitching_W\tleakage_W\ttotal_W"
+foreach_in_collection c $default_cells { power_row $f [get_object_name $c] $c }
+close $f
+puts "POWER_DONE default_toggle_rate=$DTR default_touch_cells=[sizeof_collection $default_cells]"
+POWER_DONE default_toggle_rate=0.2 default_touch_cells=0
+exit
+Information: Defining new variable 'a'. (CMD-041)
+Information: Defining new variable 'c'. (CMD-041)
+Information: Defining new variable 'f'. (CMD-041)
+Information: Defining new variable 'g'. (CMD-041)
+Information: Defining new variable 'p'. (CMD-041)
+Information: Defining new variable 'RAM4K_DB'. (CMD-041)
+Information: Defining new variable 'accel_eps'. (CMD-041)
+Information: Defining new variable 'path'. (CMD-041)
+Information: Defining new variable 'MAIN'. (CMD-041)
+Information: Defining new variable 'RAM1K_DB'. (CMD-041)
+Information: Defining new variable 'cs'. (CMD-041)
+Information: Defining new variable 'ef'. (CMD-041)
+Information: Defining new variable 'dt'. (CMD-041)
+Information: Defining new variable 'STD_DB'. (CMD-041)
+Information: Defining new variable 'lk'. (CMD-041)
+Information: Defining new variable 'ns'. (CMD-041)
+Information: Defining new variable 'ok'. (CMD-041)
+Information: Defining new variable 'ps'. (CMD-041)
+Information: Defining new variable 'tf'. (CMD-041)
+Information: Defining new variable 'DTR'. (CMD-041)
+Information: Defining new variable 'ENG'. (CMD-041)
+Information: Defining new variable 'e203_eps'. (CMD-041)
+Information: Defining new variable 'default_cells'. (CMD-041)
+Information: Defining new variable 'RAM128_DB'. (CMD-041)
+Information: Defining new variable 'accel_launch_pins'. (CMD-041)
+Information: Defining new variable 'name'. (CMD-041)
+Information: Defining new variable 'macros'. (CMD-041)
+
+Timing updates: 1 (0 implicit, 1 explicit) (0 incremental, 1 full, 0 logical)
+Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
+Maximum memory usage for this session: 3953.18 MB
+CPU usage for this session: 758 seconds 
+Elapsed time for this session: 255 seconds
+Elapsed time spent in memory sampling: 0 seconds
+Diagnostics summary: 2229 warnings, 37 informationals
+
+Thank you for using pt_shell!

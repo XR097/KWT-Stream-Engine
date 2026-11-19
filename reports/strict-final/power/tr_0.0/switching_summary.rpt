@@ -1,0 +1,78 @@
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+Warning: Switching activity for constant net <instance> is reset by SAIF/VCD.  (PSW-208)
+****************************************
+Report : Switching Activity
+	
+Design : kse_e203_soc_top
+Version: X-2025.06
+Date   : Fri Nov 13 16:15:05 2026
+****************************************
+
+ Switching Activity Overview Statistics for "kse_e203_soc_top"
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                  From Activity     From         From         From             From            From                                                            Not           From Annotated
+Object Type       File (%)          SSA (%)      SSA Force (%) SSA Force (%)   SCA (%)         Clock (%)       Default (%)     Propagated(%)   Implied(%)      Annotated(%)  Waveform(%)         Total
+                                                 Annotated    Implied                                                                                                        
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Nets             123485(19.00%)    0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        0(0.00%)        652(0.10%)      0(0.00%)        25971(4.00%)    499899(76.91%) 0(0.00%)           650007
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nets Driven by
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Primary Input     150(100.00%)      0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        0(0.00%)        0(0.00%)        0(0.00%)        0(0.00%)        0(0.00%)      0(0.00%)            150
+Tri-State         0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+Black Box         0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+Sequential        82883(100.00%)    0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        0(0.00%)        0(0.00%)        0(0.00%)        2(0.00%)        0(0.00%)      0(0.00%)            82885
+Combinational     38532(6.82%)      0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        0(0.00%)        652(0.12%)      0(0.00%)        25969(4.60%)    499899(88.47%) 0(0.00%)           565052
+Memory            1920(100.00%)     0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        0(0.00%)        0(0.00%)        0(0.00%)        0(0.00%)        0(0.00%)      0(0.00%)            1920
+Clock Gate        0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Static Probability Overview Statistics for "kse_e203_soc_top"
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                  From Activity     From         From         From             From            From                                                            Not           From Annotated
+Object Type       File (%)          SSA (%)      SSA Force (%) SSA Force (%)   SCA (%)         Clock (%)       Default (%)     Propagated(%)   Implied(%)      Annotated(%)  Waveform(%)         Total
+                                                 Annotated    Implied                                                                                                        
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Nets             123485(19.00%)    0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        0(0.00%)        652(0.10%)      0(0.00%)        25971(4.00%)    499899(76.91%) 0(0.00%)           650007
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nets Driven by
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Primary Input     150(100.00%)      0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        0(0.00%)        0(0.00%)        0(0.00%)        0(0.00%)        0(0.00%)      0(0.00%)            150
+Tri-State         0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+Black Box         0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+Sequential        82883(100.00%)    0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        0(0.00%)        0(0.00%)        0(0.00%)        2(0.00%)        0(0.00%)      0(0.00%)            82885
+Combinational     38532(6.82%)      0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        0(0.00%)        652(0.12%)      0(0.00%)        25969(4.60%)    499899(88.47%) 0(0.00%)           565052
+Memory            1920(100.00%)     0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        0(0.00%)        0(0.00%)        0(0.00%)        0(0.00%)        0(0.00%)      0(0.00%)            1920
+Clock Gate        0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1

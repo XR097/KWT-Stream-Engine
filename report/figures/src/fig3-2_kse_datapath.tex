@@ -1,0 +1,55 @@
+% 图 3-2 KSE 计算数据通路
+\documentclass[border=4pt]{standalone}
+\input{common.tex}
+\begin{document}
+\begin{tikzpicture}[
+  u/.style={blk, font=\footnotesize, minimum height=7mm, inner sep=2pt},
+  uo/.style={blkO, font=\footnotesize, minimum height=7mm, inner sep=2pt},
+  pe/.style={draw=cBlue, fill=white, line width=0.5pt, minimum width=2.0cm, minimum height=1.3cm, rounded corners=1pt, inner sep=0pt},
+]
+% 源行存储
+\node[u, minimum width=2.2cm, minimum height=1.2cm] (rs) at (0,0) {行存储 A 或 B\\\scriptsize 读一行 32 字节};
+\draw[draw=cBlue, line width=1.4pt] (1.3,0) -- (1.6,0) -- (1.6,1.2) -- (9.0,1.2);
+\node[lbl, anchor=south west] at (1.7,1.25) {流式操作数：32 个字节（s8 激活 / u8 概率）广播到 32 列，每行 PE 取一个字节};
+\draw[draw=cBlue, line width=1.4pt] (1.1,0) -- (1.3,0);
+% 列 0 详细
+\foreach \r/\y in {0/0.25, 1/-1.15} {
+  \node[pe] (pe\r) at (3.6,\y) {};
+  \node[font=\scriptsize, anchor=north west, inner sep=1.5pt] at (pe\r.north west) {PE(\r,0)};
+  \node[draw=cGray, fill=cGrayL, font=\tiny, minimum width=1.8cm, minimum height=3.6mm, inner sep=0.5pt] (slot\r) at ($(pe\r.center)+(0,0.17)$) {驻留槽选 4 位 / 8 位};
+  \node[circle, draw=cOrange, fill=cOrangeL, font=\scriptsize, inner sep=0.3pt, minimum size=4.2mm] (mul\r) at ($(pe\r.center)+(0,-0.36)$) {×};
+  \draw[-{Stealth[length=1.1mm,width=1mm]}, draw=cGray, line width=0.4pt] (slot\r.south) -- (mul\r.north);
+  \draw[->, draw=cBlue, line width=0.5pt] (pe\r.west |- mul\r) ++(-0.35,0) -- (mul\r.west);
+}
+\node[font=\small, text=cGray] at (3.6,-2.05) {$\vdots$};
+\node[lbl, anchor=west] at (3.75,-2.05) {共 32 行};
+\draw[->, draw=cBlue, line width=0.5pt] (1.6,1.2) |- ($(pe0.west |- mul0)+(-0.35,0)$);
+\draw[->, draw=cBlue, line width=0.5pt] (1.6,0) |- ($(pe1.west |- mul1)+(-0.35,0)$);
+% 部分和与累加
+\node[u, minimum width=1.9cm, minimum height=9mm] (psum) at (3.6,-3.05) {4 输入部分和 ×8\\\scriptsize （S2 寄存）};
+\node[u, minimum width=1.9cm, minimum height=9mm] (acc) at (3.6,-4.35) {求和 + 24 位累加\\\scriptsize （S3）};
+\draw[ar] (3.6,-2.35) -- (psum);
+\draw[ar] (psum) -- (acc);
+% 其余列
+\foreach \c/\x in {1/6.3, 31/9.0} {
+  \node[pe, minimum height=5.4cm, fill=cBlueL] (col\c) at (\x,-1.95) {};
+  \node[font=\scriptsize, align=center] at (\x,-1.95) {列 \c\\[2pt]32 个 PE\\部分和\\24 位累加};
+  \draw[->, draw=cBlue, line width=0.5pt] (\x,1.2) -- (col\c.north);
+}
+\node[font=\large, text=cGray] at (7.65,-1.85) {$\cdots$};
+\begin{scope}[on background layer]
+\draw[draw=cBlue, line width=0.8pt, rounded corners=3pt] (2.3,0.95) rectangle (10.1,-5.05);
+\coordinate (arrSW) at (2.3,-5.05);
+\end{scope}
+\node[ttl, anchor=north west] at ($(arrSW)+(0,-0.08)$) {\footnotesize 32×32 MAC 阵列：1024 个 s9×s8 乘法器，权重 / K / V 驻留，II=1};
+\node[lbl, align=left, anchor=north west] at ($(rs.south west)+(0,-1.2)$) {驻留操作数由加载器\\预装入各 PE 的\\32 位寄存器（环形槽）};
+% 后处理
+\node[uo, minimum width=10.6cm, minimum height=9mm] (post) at (6.0,-7.0) {32 路后处理：加 bias（16 位） → 逐通道 RNE 右移 → 饱和到 int8 → （FC1）GELU ROM};
+\draw[ar] (acc.south) -- (acc.south |- post.north);
+\draw[ar] (col1.south) -- (col1.south |- post.north);
+\draw[ar] (col31.south) -- (col31.south |- post.north);
+\node[lbl, anchor=west] at ($(col31.south)+(0.1,-1.15)$) {32 个 24 位累加值};
+\node[u, minimum width=2.4cm, minimum height=1.0cm] (rd) at (6.0,-8.5) {另一块行存储\\\scriptsize 写回一行 32 字节};
+\draw[ar] (post) -- (rd);
+\end{tikzpicture}
+\end{document}

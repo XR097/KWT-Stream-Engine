@@ -1,0 +1,41 @@
+Information: Checking 'no_input_delay'.
+Warning: There are 1 ports with no clock-relative input delay specified.
+Since the variable 'timing_input_port_default_clock' is 'false',
+paths from such ports will be unconstrained.
+
+Ports
+------------------------------------------------------------
+io_pads_aon_erst_n_i_ival
+
+Information: Checking 'no_driving_cell'.
+Information: Checking 'unconstrained_endpoints'.
+Warning: There is 1 endpoint which is not constrained for maximum delay.
+
+Endpoint
+--------------------------------------------------------------------------------
+kse_clk
+
+Information: Checking 'unexpandable_clocks'.
+ Failed clocks set      Related clocks           Original Period     Expanded Period     Added Edges     Voltage Config
+-----------------------------------------------------------------------------------------------------------------------
+Information: Checking 'latch_fanout'.
+Information: Checking 'no_clock'.
+Information: Checking 'partial_input_delay'.
+Information: Checking 'generic'.
+Information: Checking 'loops'.
+Warning: There is 1 timing loop in the design.
+
+  Pin   (timing loop #1)
+  --------------------------------------------------
+   <9 instance/pin entries omitted>
+  --------------------------------------------------
+
+Information: Checking 'generated_clocks'.
+Information: Checking 'pulse_clock_non_pulse_clock_merge'.
+Information: Checking 'pll_configuration'.
+Information: Checking 'voltage_level'.
+
+Check cell voltage level related issues including rail voltages
+Cell Name                      min/max    issues found 
+----------------------------------------------------------------------
+0

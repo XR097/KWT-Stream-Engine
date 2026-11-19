@@ -1,0 +1,39 @@
+ 
+****************************************
+Report : area
+Design : kse_e203_soc_top
+Version: X-2025.06-SP4
+Date   : Fri Nov 13 16:06:39 2026
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'kse_e203_soc_top' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Information: Timing loop detected. (OPT-150)
+	u_e203_subsys_top/u_e203_subsys_main/u_kse_sys/u_bus/u_arb/C287/B u_e203_subsys_top/u_e203_subsys_main/u_kse_sys/u_bus/u_arb/C287/Y u_e203_subsys_top/u_e203_subsys_main/u_kse_sys/u_bus/u_arb/U20/A u_e203_subsys_top/u_e203_subsys_main/u_kse_sys/u_bus/u_arb/U20/Y u_e203_subsys_top/u_e203_subsys_main/u_kse_sys/u_bus/u_arb/U9/A1 u_e203_subsys_top/u_e203_subsys_main/u_kse_sys/u_bus/u_arb/U9/Y u_e203_subsys_top/u_e203_subsys_main/u_kse_sys/u_bus/u_arb/arbt_num_gt_1_gen.dp_1.u_sirv_gnrl_rspid_fifo/U1/BN u_e203_subsys_top/u_e203_subsys_main/u_kse_sys/u_bus/u_arb/arbt_num_gt_1_gen.dp_1.u_sirv_gnrl_rspid_fifo/U1/Y 
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'u_e203_subsys_top/u_e203_subsys_main/u_kse_sys/u_bus/u_arb/C287'
+         to break a timing loop. (OPT-314)
+Library(s) Used:
+
+    sc9mc_logic0040ll_base_rvt_c40_tt_typical_max_1p10v_25c (File: <PDK>)
+    RAMSP1024X16_tt_1p10v_1p10v_25c (File: <PDK>)
+    RAMSP128X16_tt_1p10v_1p10v_25c (File: <PDK>)
+    RAMSP4096X16_tt_1p10v_1p10v_25c (File: <PDK>)
+
+Number of ports:                       110067
+Number of nets:                        720256
+Number of cells:                       584798
+Number of combinational cells:         500432
+Number of sequential cells:             82885
+Number of macros/black boxes:             120
+Number of buf/inv:                      72544
+Number of references:                       2
+
+Combinational area:             697265.670233
+Buf/Inv area:                    54937.032852
+Noncombinational area:          328806.323408
+Macro/Black Box area:          2515554.501953
+Net Interconnect area:               0.000000
+
+Total cell area:               3541626.495594
+Total area:                    3541626.495594
+1

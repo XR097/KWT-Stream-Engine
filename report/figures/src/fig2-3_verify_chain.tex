@@ -1,0 +1,18 @@
+% 图 2-3 数值验证链示意
+\documentclass[border=4pt]{standalone}
+\input{common.tex}
+\begin{document}
+\begin{tikzpicture}[node distance=5mm and 9mm]
+\node[blkG, minimum width=3.1cm, minimum height=2.2cm] (sw) {\textbf{量化软件模型}\\[2pt]\footnotesize 冻结方案：全 W4、A8\\\footnotesize Softmax Q15/P7\\\footnotesize LN Q12/Q12，GELU 中段表\\\footnotesize 整数参考编码器};
+\node[blkP, minimum width=3.2cm, minimum height=2.2cm, right=11mm of sw] (pk) {\textbf{整数参数包 + golden}\\[2pt]\footnotesize 权重/bias/移位码/表项\\\footnotesize 24 条样本输入与输出\\\footnotesize 全部逐层中间张量\\\footnotesize 小端二进制 + SHA256};
+\node[blk, minimum width=4.6cm, right=14mm of pk] (iss) {\textbf{整数原语模型}\\\footnotesize 与参考编码器独立实现\\\footnotesize 每编码器 4320 次层级比较};
+\node[blk, minimum width=4.6cm, below=8mm of iss, draw=cBlue, fill=cBlueM!45] (kse) {\textbf{KSE RTL}\\\footnotesize 引擎 24 样本 × 12 层逐层比对\\\footnotesize 完整 SoC 12 个任务};
+\node[blkW, minimum width=2.4cm, minimum height=2.2cm, right=11mm of iss] (eq) {\textbf{逐位一致}\\[2pt]\footnotesize 软件模型精度\\\footnotesize = RTL 精度};
+\draw[ar] (sw) -- node[lbl, above] {导出} (pk);
+\foreach \n in {iss,kse} {
+  \draw[ar] (pk.east) -- ++(0.55,0) |- (\n.west);
+  \draw[ar] (\n.east) -- ++(0.45,0) |- (eq.west);
+}
+\node[lbl, below=1.5mm of sw] {4445 / 4890 条精度评测};
+\end{tikzpicture}
+\end{document}

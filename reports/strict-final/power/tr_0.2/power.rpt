@@ -1,0 +1,33 @@
+****************************************
+Report : Averaged Power
+	-nosplit
+Design : kse_e203_soc_top
+Version: X-2025.06
+Date   : Fri Nov 13 16:21:19 2026
+****************************************
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+clock_network              0.0571    0.0169 1.633e-09    0.0740 (59.98%)  i
+register                1.019e-03 8.283e-04 2.144e-05 1.869e-03 ( 1.51%)  
+combinational              0.0131    0.0198 5.959e-05    0.0330 (26.73%)  
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+memory                     0.0141 3.099e-05 3.788e-04    0.0145 (11.77%)  
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+
+  Net Switching Power  =    0.0376   (30.48%)
+  Cell Internal Power  =    0.0853   (69.15%)
+  Cell Leakage Power   = 4.598e-04   ( 0.37%)
+                         ---------
+Total Power            =    0.1234  (100.00%)
+
+1
