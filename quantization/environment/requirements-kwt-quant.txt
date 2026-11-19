@@ -1,0 +1,25 @@
+# KWT-1 reference/quantization environment (Windows x86_64, CPU-only).
+# TensorFlow 2.4.0 supports Python 3.6-3.8 and is kept here to match the
+# original KWT checkpoint and graph behavior.  Do not install tensorflow-gpu
+# or CUDA packages for the baseline environment.
+tensorflow==2.4.0
+# TFA 0.12.x is the release line paired with TensorFlow 2.4.
+tensorflow-addons==0.12.1
+
+# TensorFlow 2.4's Windows wheels require the pre-1.20 NumPy ABI.
+numpy==1.19.5
+protobuf<3.20
+h5py<3
+
+# Dependencies used by the upstream KWT scripts/model definitions.
+absl-py==0.13.0
+pydot==1.4.2
+graphviz==0.16
+
+# Audio/MFCC and report generation for calibration and golden data.
+scipy==1.5.4
+matplotlib==3.3.4
+
+# Project tooling and validation.
+pytest==7.4.4
+pyyaml==6.0.1

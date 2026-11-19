@@ -1,0 +1,18 @@
+name: kwt-quant
+
+channels:
+  # Defaults supplies the Windows/Python 3.8 runtime.  The pip section below
+  # is intentional: TensorFlow 2.4 is not reliably available from conda.
+  - defaults
+
+dependencies:
+  - python=3.8.18
+  # pip 24.2 is retained as the project baseline; legacy wheels are installed
+  # from the external cache when Python 3.8 cannot reach PyPI reliably.
+  - pip=24.2
+  - setuptools<70
+  - wheel=0.37.1
+  - pip:
+      # Run `conda env create -f quantization/environment/kwt-quant-environment.yml`
+      # from the repository root so this relative path resolves correctly.
+      - -r ./quantization/environment/requirements-kwt-quant.txt

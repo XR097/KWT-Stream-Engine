@@ -1,0 +1,24 @@
+KSE (KWT Stream Engine)
+Copyright 2026 KSE contributors
+
+This product includes software and data developed by third parties.
+The following notices are provided for attribution and do not modify
+the Apache License, Version 2.0.
+
+1. E203 (hbirdv2)
+   Source: https://github.com/riscv-mcu/e203_hbirdv2
+   License: Apache License, Version 2.0
+   Copyright (c) the e203_hbirdv2 contributors.
+
+2. ARM keyword-transformer (KWT model)
+   Source: https://github.com/ARM-software/keyword-transformer
+   License: Apache License, Version 2.0
+   Copyright (c) ARM Limited and contributors.
+   The KWT-1 checkpoint and model definitions used by this project come
+   from this repository.
+
+3. Google Speech Commands dataset
+   Source: https://www.tensorflow.org/datasets/catalog/speech_commands
+   Reference: https://arxiv.org/abs/1804.03209
+   License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+   Copyright (c) Google LLC.

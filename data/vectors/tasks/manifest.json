@@ -1,0 +1,23 @@
+{
+ "format": "kse-soc-task-v1",
+ "in_words": 1584,
+ "param_words": 79008,
+ "image_words": 80592,
+ "params_sha256": "c2221047ae30103dc52d32220baff297cba776a0ee1ccd5f10a0e8b4464056db",
+ "tasks": [
+  {
+   "task": 0,
+   "sample": 0,
+   "label": 0,
+   "input_sha256": "8ee649e88883c502f50c3e988b3edb5b4a7c629ad1bfde65eb5a2c787437a544",
+   "output_sha256": "4a31ac3d345334ae5839bbbc7d02be2184e882858c172b6a7d437ef5c1e94c98"
+  },
+  {
+   "task": 1,
+   "sample": 2,
+   "label": 1,
+   "input_sha256": "7a8d67f6554b89e1d0eb208ce4253a3e76818898b43b0c1d59d7a4d08d15c764",
+   "output_sha256": "316a181ca7aaa063048a2a5e2cbc8acf193e1f28885fc6de60564c1a0bd10bdf"
+  }
+ ]
+}
