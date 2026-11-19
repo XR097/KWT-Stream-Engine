@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """把 draft/ch*.md 转成 LaTeX（ElegantPaper 模板）并用 tectonic 编译为 PDF。
-用法：python3 build_pdf.py    输出：build/report.tex 与 build/设计报告初稿.pdf"""
+用法：python3 build_pdf.py    输出：build/report.tex 与 build/design_report.pdf"""
 import re, glob, os, subprocess, shutil, unicodedata
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -221,8 +221,8 @@ def main():
     msgs = [l for l in (r.stdout + r.stderr).split('\n') if 'downloading' not in l and l.strip()]
     print('\n'.join(msgs[-12:]))
     if r.returncode == 0:
-        os.replace(os.path.join(d, 'report.pdf'), os.path.join(d, '设计报告初稿.pdf'))
-        print('OK ->', os.path.join(d, '设计报告初稿.pdf'))
+        os.replace(os.path.join(d, 'report.pdf'), os.path.join(d, 'design_report.pdf'))
+        print('OK ->', os.path.join(d, 'design_report.pdf'))
 
 if __name__ == '__main__':
     main()
