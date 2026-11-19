@@ -154,7 +154,7 @@ python -B quantization/scripts/run_asic_numerics.py \
 
 ### 7. 设计报告与验证材料
 
-- 设计报告：[report/build/设计报告初稿.pdf](report/build/设计报告初稿.pdf)。源稿在 `report/draft/`，构建方法见 [report/README.md](report/README.md)。
+- 设计报告：[report/build/design_report.pdf](report/build/design_report.pdf)。源稿在 `report/draft/`，构建方法见 [report/README.md](report/README.md)。
 - 原始汇总报告：[reports/strict-final/](reports/strict-final/README.md)，包括 DC 面积、QoR 和时序检查，三种翻转率下的 PrimePower 功耗，单元和 SoC 回归的 VCS 日志，以及 SpyGlass lint。为了只保留汇总信息，逐实例的路径、库单元和逐宏功耗明细已经删去，README 里列出了删掉的内容。
 - UVM 验证环境：[verification/README.md](verification/README.md)。覆盖率数字见设计报告第 4.4 节。
 
@@ -188,6 +188,12 @@ KSE_REPO=$PWD dc_shell -no_home_init -f tools/kse/synth_kse.tcl
   Apache-2.0 许可证；KWT-1 checkpoint 来自 `third-party/kwt`。
 - 数据集不随仓库分发；量化脚本可按 `docs/quantization/quant_environment.md` 的说明
   下载并校验 Google Speech Commands。
+
+## 技术交流
+
+欢迎加入高校数字 IC 技术交流 QQ 群（群号 **1134508155**）交流 ASIC 设计、验证和量化相关问题。
+
+<img src="高校数字IC交流群.jpg" alt="QQ群二维码" width="200"/>
 
 ## 许可证
 
